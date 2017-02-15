@@ -126,7 +126,7 @@ section {
 .page-header {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-end;
     height: 250px;
     background-color: rgb(92, 195, 245);
 }
@@ -1159,11 +1159,11 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 16pt; 
+    font-size: 16pt;
     line-height: 24pt;
 }
 
-.page-footer { 
+.page-footer {
     width: 100%;
     text-align: center;
     color: black;
