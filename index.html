@@ -2,1229 +2,369 @@
 <html lang="cs" dir="ltr">
   <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Michal Weiser <michal.weiser@gmail.com>">
     <title>Bobobox</title>
-    <style>
-        @font-face {
-            font-family: 'Baloo Paaji';
-            src: url('public/font/baloo_paaji/baloo_paaji-regular.ttf');
-        }
-
-        @font-face {
-            font-family: 'Ubuntu';
-            src: url('public/font/ubuntu/ubuntu-light.ttf');
-            font-weight: 300;
-        }
-
-        @font-face {
-            font-family: 'Ubuntu';
-            src: url('public/font/ubuntu/ubuntu-regular.ttf');
-            font-weight: 400;
-        }
-
-        @font-face {
-            font-family: 'Ubuntu';
-            src: url('public/font/ubuntu/ubuntu-medium.ttf');
-            font-weight: 500;
-        }
-
-        @font-face {
-            font-family: 'Ubuntu';
-            src: url('public/font/ubuntu/ubuntu-bold.ttf');
-            font-weight: 700;
-        }
-
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        a,
-        a:visited,
-        a:hover,
-        a:active {
-            text-decoration: none;
-            color: white;
-        }
-
-        h1, button, .button,
-        .bubble .title,
-        .bubble .subtitle,
-        .objednavka__vybrat,
-        .objednavka__type__save,
-        .objednavka__type__save-per-box,
-        .objednavka__type__free,
-        .objednavka__download__title,
-        .objednavka__download__button,
-        .objednavka__inspire__button,
-        .objednavka__inspire__subtitle,
-        .kdozatim__title,
-        .kdozatim__avatar__caption,
-        .kdozatim__help-title,
-        .kdozatim__phone,
-        .kdozatim__mail {
-            font-family: 'Baloo Paaji', cursive;
-            letter-spacing: 1.5pt;
-        }
-
-        h1 {
-            color: white;
-        }
-
-        h2,h3,h4,h5,h6,
-        .prehrat-video__text,
-        .product-text,
-        .jakto__text,
-        .objednavka__type__description,
-        .objednavka__review__text {
-            font-family: 'Ubuntu', sans-serif;
-            font-weight: 300;
-            letter-spacing: 1.5pt;
-        }
-
-        .strong {
-            font-weight: 500;
-        }
-
-        h1,h2,h3,h4,h5,h6 {
-            margin: 0;
-        }
-
-        h3 {
-            font-size: 20pt;
-            line-height: 30px;
-        }
-
-        section {
-            width: 100%;
-        }
-
-        .page-header {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height: 250px;
-            background-color: rgb(92, 195, 245);
-        }
-
-        .rozvijime {
-            display: flex;
-            justify-content: flex-start;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .rozvijime {
-            background-color: rgb(92, 195, 245);
-            position: relative;
-            color: white;
-            height: 750px;
-        }
-
-        .grass {
-            background-color: rgb(96, 179, 76);
-            width: 100%;
-            height: 120px;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-        }
-
-        .button-objednat {
-            background-color: rgb(247,114,6);
-            border: 4px solid rgb(247,114,6);
-            display: block;
-            border-radius: 25px;
-            width: 250px;
-            height: 70px;
-            transition: all 250ms ease;
-        }
-
-        .button-objednat:hover .button-objednat__title {
-            color: rgb(247,114,6);
-        }
-
-        .button-objednat:hover {
-            color: rgb(247,114,6);
-            background-color: white;
-        }
-
-        .rozvijime__header {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            
-        }
-
-        .rozvijime__header__title {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding-top: 30px;
-            width: 1100px;
-        }
-
-        .rozvijime__header__title h1 {
-            font-size: 30pt;
-            text-align: center;
-            padding-bottom: 30px;
-        }
-
-        .button-objednat {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            padding: 0 34px;
-            box-shadow: black 5px 5px 20px -5px;
-        }
-
-        .button-objednat__title {
-            flex-grow: 1;
-            text-align: center;
-            font-size: 28pt;
-            color: white;
-        }
-
-        .prehrat-video {
-            height: 300px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .prehrat-video__link {
-            text-align: center;
-        }
-
-        .prehrat-video__text {
-            display: block;
-        }
-
-        .prehrat-video__text {
-            font-size: 20pt;
-            font-weight: 400;
-            margin-top: 14px;
-        }
-
-        .relative {
-            position: relative;
-        }
-
-        .relative.girl {
-            right: 30px;
-            bottom: 30px;
-        }
-
-        .relative.paint {
-            left: 310px;
-            bottom: 90px;
-        }
-
-        .relative.bobo {
-            left: 160px;
-            bottom: 120px;
-        }
-
-        .relative.boy {
-            right: 360px;
-            bottom: 30px;
-        }
-
-        .relative.castle {
-            right: 210px;
-            bottom: 100px;
-        }
-
-        .ficury {
-            height: 660px;
-            background-image: url('public/img/header/ficury_background.png');
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .ficury__playbox {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-grow: 1;
-        }
-
-        .ficury__title,
-        .jakto__title {
-            font-size: 40pt;
-            letter-spacing: 2.5pt;
-            margin-top: 50px;
-        }
-
-        .product-description {
-            border-bottom: rgb(191, 191, 191) 1px dashed;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            height: 450px;
-        }
-
-        .product-description.usetrite {
-            border-color: transparent;
-        }
-
-        .product-text {
-            font-weight: 400;
-            letter-spacing: initial;
-            font-size: 18pt;
-            line-height: 24pt;
-        }
-
-        .product-description.right .text-box {
-            order: 2;
-        }
-
-        .product-description.left .text-box {
-            order: 0;
-        }
-
-        .kreativni .text-box {
-            margin-left: 200px;
-        }
-
-        .vkazdem .text-box {
-            margin-right: 140px;
-        }
-
-        .navody .text-box {
-            margin-left: 60px;
-        }
-
-        .usetrite .text-box {
-            margin-right: 120px;
-        }
-
-        .product-image {
-            order: 1;
-        }
-
-        .product-title {
-            font-size: 34pt;
-            line-height: 44pt;
-            margin-bottom: 45px;
-        }
-
-        .kreativni__title {
-            color: rgb(249, 175, 29);
-        }
-
-        .vkazdem__title {
-            color: rgb(59, 168, 212);
-        }
-
-        .navody__title {
-            color: rgb(236, 99, 99);
-        }
-
-        .usetrite__title {
-            color: rgb(0, 161, 57);
-        }
-
-        .vkazdem__six {
-            color: white;
-            background-color: rgb(236, 99, 99);
-            display: inline-block;
-            width: 55px;
-            height: 55px;
-            text-align: center;
-            border-radius: 55px;
-        }
-
-        .jakto {
-            background-color: rgb(250, 250, 250);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 700px;
-        }
-
-        .jakto__content {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-        }
-
-        .jakto__title {
-            color: black;
-            margin-bottom: 30px;
-        }
-
-        .jakto__photo {
-            width: 430px;
-            height: 430px;
-        }
-
-        .jakto__photobox {
-            margin-left: 120px;
-            position: relative;
-        }
-
-        .jakto .bubble {
-            width: 130px;
-            height: 130px;
-            position: absolute;
-            border-radius: 130px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .bubble.red {
-            background-color: rgb(236, 99, 99);
-            top: 170px;
-            left: -50px;
-        }
-
-        .bubble.yellow {
-            background-color: rgb(249, 175, 29);
-            top: 20px;
-            left: -10px;
-        }
-
-        .bubble.blue {
-            background-color: rgb(59, 168, 212);
-            top: 320px;
-            left: -10px;
-        }
-
-        .bubble .title,
-        .bubble .subtitle {
-            display: flex;
-            color: white;
-            letter-spacing: initial;
-        }
-
-        .bubble .title {
-            font-size: 26pt;
-            line-height: 20pt;
-        }
-
-        .bubble .subtitle {
-            font-size: 13pt;
-            line-height: 16pt;
-        }
-
-        .bubble .arrow {
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 10px 0 10px 20px;
-            position: absolute;
-        }
-
-        .bubble.red .arrow {
-            border-color: transparent transparent transparent rgb(236, 99, 99);
-            top: 55px;
-            right: -18px;
-        }
-
-        .bubble.yellow .arrow {
-            border-color: transparent transparent transparent rgb(249, 175, 29);
-            top: 102px;
-            right: 0;
-            transform: rotate(45deg);
-        }
-
-        .bubble.blue .arrow {
-            border-color: transparent transparent transparent rgb(59, 168, 212);
-            top: 10px;
-            right: -3px;
-            transform: rotate(-36deg);
-        }
-
-        .jakto__text {
-            font-size: 13pt;
-            letter-spacing: initial;
-        }
-
-        .jakto__text > p {
-            padding-bottom: 15px;
-        }
-
-        .objednavka__header {
-            background-color: rgb(194, 79, 79);
-            height: 420px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            text-align: center;
-        }
-
-        .objednavka__title {
-            font-size: 32pt;
-            margin-top: 90px;
-            margin-bottom: 30px;
-        }
-
-        .objednavka__subtitle {
-            font-size: 22pt;
-            font-weight: 500;
-            letter-spacing: initial;
-            color: white;
-        }
-
-        .objednavka__content {
-            height: 1220px;
-            background-color: rgb(138, 210, 245);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-        }
-
-        .objednavka__types {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            margin-top: -90px;
-        }
-
-        .objednavka__type {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            background-color: white;
-            width: 370px;
-            height: 440px;
-            margin: 0 15px;
-            border-radius: 40px;
-            text-align: center;            
-        }
-
-        .objednavka__type__title,
-        .objednavka__type__price {
-            color: black;
-        }
-
-        .objednavka__type__title {
-            margin-top: 40px;
-            font-size: 20pt;
-            line-height: 24pt;
-        }
-
-        .objednavka__type__price {
-            font-size: 30pt;
-            line-height: 30pt;
-        }
-
-        .objednavka__vybrat {
-            width: 240px;
-            height: 80px;
-            position: absolute;
-            bottom: -40px;
-            border: 4px solid rgb(247,114,6);
-            border-radius: 30px;
-            background-color: rgb(247,114,6);
-            color: white;
-            box-shadow: black 5px 5px 20px -5px;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            letter-spacing: initial;
-            font-size: 26pt;
-            transition: all 250ms ease;
-        }
-
-        .objednavka__vybrat:hover {
-            color: rgb(247,114,6);
-            background-color: white;
-        }
-
-        .objednavka__type__description {
-            letter-spacing: initial;
-            font-weight: 400;
-            margin-top: 40px;
-        }
-
-        .objednavka__type__save {
-            letter-spacing: initial;
-            font-size: 16pt;
-            color: rgb(194, 79, 79);
-        }
-
-        .objednavka__type__save-per-box {
-            letter-spacing: initial;
-            font-size: 18pt;
-            margin-top: 20px;
-        }
-
-        .objednavka__type__free,
-        .objednavka__type__save-per-box .green {
-            color: rgb(0, 161, 57);
-        }
-
-        .objednavka__type__free {
-            position: absolute;
-            top: 190px;
-            right: 40px;
-            letter-spacing: initial;
-            font-size: 14pt;
-        }
-
-        .objednavka__recomend {
-            text-align: center;
-        }
-
-        .objednavka__inspire__title,
-        .objednavka__recomend__title {
-            margin-top: 140px;
-            font-size: 30pt;
-            margin-bottom: 60px;
-        }
-
-        .objednavka__reviews {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .objednavka__review {
-            width: 370px;
-            height: 210px;
-            border: rgb(191, 191, 191) 2px dashed;
-            border-radius: 30px;
-            background-color: white;
-            margin: 0 15px;
-            position: relative;
-        }
-
-        .objednavka__review__text {
-            margin-top: 40px;
-            letter-spacing: initial;
-            font-weight: 400;
-        }
-
-        .objednavka__review__check {
-            width: 40px;
-            height: 40px;
-            background-repeat: no-repeat;
-            background-image: url('public/img/pricing/check.png');
-            position: absolute;
-            top: -20px;
-            left: calc(50% - 20px);
-        }
-
-        .objednavka__footer {
-            background-color: rgb(96, 179, 76);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            position: relative;
-        }
-
-        .objednavka__download {
-            width: 924px;
-            height: 524px;
-            margin-top: -224px;
-            background-color: white;
-            border-radius: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            text-align: center;
-            z-index: 3;
-        }
-
-        .objednavka__download__title {
-            color: rgb(0, 161, 57);
-            letter-spacing: initial;
-            font-size: 30px;
-            line-height: 30pt;
-            margin-top: 60px;
-        }
-
-        .objednavka__download__subtitle {
-            letter-spacing: initial;
-            margin-top: 50px;
-            font-size: 20pt;
-            margin-bottom: 30px;
-        }
-
-        .objednavka__download__input {
-            width: 510px;
-            height: 80px;
-            border: rgb(191, 191, 191) 2px solid;
-            border-radius: 30px;
-            font-size: 30pt;
-            margin-bottom: 50px;
-        }
-
-        .objednavka__download__button {
-            width: 410px;
-            height: 70px;
-            border: 4px solid rgb(247,114,6);
-            border-radius: 30px;
-            background-color: rgb(247,114,6);
-            color: white;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            letter-spacing: initial;
-            font-size: 26pt;
-            transition: all 250ms ease;
-        }
-
-        .objednavka__download__button:hover {
-            color: rgb(247,114,6);
-            background-color: white;
-        }
-
-        .objednavka__inspire {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            text-align: center;
-            position: relative;
-        }
-
-        .objednavka__inspire__buttons {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 60px;
-        }
-
-        .objednavka__inspire__button {
-            width: 300px;
-            height: 76px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            border-radius: 30px;
-            letter-spacing: initial;
-            font-size: 26pt;
-        }
-
-        .objednavka__inspire__button.facebook {
-            background-color: rgb(7, 93, 153);
-        }
-
-        .objednavka__inspire__button.youtube {
-            background-color: rgb(184, 44, 47);
-            margin-left: 280px;
-        }
-
-        .objednavka__inspire__button__text {
-            margin-left: 40px;
-        }
-
-        .objednavka__inspire__arrow {
-            position: absolute;
-            top: 170px;
-        }
-
-        .objednavka__inspire__arrow.left {
-            left: 130px;
-        }
-
-        .objednavka__inspire__arrow.right {
-            right: 130px;
-            transform: scaleX(-1);
-        }
-
-        .objednavka__inspire__subtitle {
-            letter-spacing: initial;
-            color: white;
-            margin-bottom: 60px;
-        }
-
-        .objednavka__footer__img {
-            position: absolute;
-        }
-
-        .objednavka__footer__img.left-grass {
-            top: -72px;
-            left: calc(50% - 533px);
-        }
-
-        .objednavka__footer__img.left-tree {
-            top: -280px;
-            left: calc(50% - 700px);
-        }
-
-        .objednavka__footer__img.squirrel {
-            top: 140px;
-            left: calc(50% - 630px);
-            z-index: 5;
-        }
-
-        .objednavka__footer__img.cat-grass {
-            top: 110px;
-            left: calc(50% + 510px);
-        }
-
-        .objednavka__footer__img.right-tree {
-            top: -250px;
-            left: calc(50% + 510px);
-        }
-
-        .kdozatim {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            background-color: white;
-        }
-
-        .kdozatim__title {
-            color: rgb(59, 168, 212);
-            letter-spacing: initial;
-            font-size: 30pt;
-            line-height: 30pt;
-            margin-top: 60px;
-            margin-bottom: 30px;
-        }
-
-        .kdozatim__subtitle {
-            letter-spacing: initial;
-            font-size: 12pt;
-            font-weight: 400;
-            margin-bottom: 60px;
-        }
-
-        .kdozatim__avatars {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            margin-bottom: 80px;
-        }
-
-        .kdozatim__avatar__caption {
-            text-align: center;
-            margin-top: 5px;
-            color: rgb(236, 99, 99);
-            letter-spacing: initial;
-            font-size: 22pt;
-        }
-
-        .kdozatim__help-title {
-            letter-spacing: initial;
-            font-size: 22pt;
-            color: rgb(0, 161, 57);
-        }
-
-        .kdozatim__arrows {
-            position: relative;
-            width: 100%;
-        }
-
-        .kdozatim__arrow {
-            position: absolute;
-        }
-
-        .kdozatim__arrow.first,
-        .kdozatim__arrow.fourth {
-            top: -75px;
-        }
-
-        .kdozatim__arrow.second,
-        .kdozatim__arrow.third {
-            top: -100px;
-        }
-
-        .kdozatim__arrow.first {
-            left: calc(50% - 350px);
-        }
-
-        .kdozatim__arrow.second {
-            left: calc(50% - 90px);
-        }
-
-        .kdozatim__arrow.third {
-            right: calc(50% - 90px);
-            transform: scaleX(-1);
-        }
-        
-        .kdozatim__arrow.fourth {
-            right: calc(50% - 350px);
-            transform: scaleX(-1);
-        }
-
-        .kdozatim__phone,
-        .kdozatim__mail {
-            color: black;
-        }
-
-        .kdozatim__contact {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            margin-top: 40px;
-            margin-bottom: 60px;
-        }
-
-        .kdozatim__contact__text {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-size: 16pt; 
-            line-height: 24pt;
-        }
-        .page-footer { 
-            width: 100%;
-            text-align: center;
-            color: black;
-            font-size: 10pt;
-            padding: 10px 0;
-        }
-
-        .page-footer > a {
-            color: black;
-            text-decoration: underline;
-        }
-
-        .page-content {
-            overflow: hidden;
-        }
-    </style>
+    <link href="css/aos.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/youtube_popup.css" rel="stylesheet" type="text/css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon/favicon.png">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/favicon-retina-ipad.png">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/favicon-retina-iphone.png">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/favicon-standard-ipad.png">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/favicon-standard-iphone.png">
   </head>
   <body>
     <main class="page-content">
-        <header class="page-header">
-            <img src="public/img/header/cloud_left.png" alt="Levý mráček">
-            <img src="public/img/header/box.png" alt="Bobobox box">
-            <img src="public/img/header/cloud_right.png" alt="Pravý mráček">
+      <header class="page-header">
+        <img class="page-header__image__cloud" src="img/header/cloud_left.png" alt="Levý mráček">
+        <img src="img/header/box.png" alt="Bobobox box">
+        <img class="page-header__image__cloud" src="img/header/cloud_right.png" alt="Pravý mráček">
+      </header>
+      <section class="rozvijime">
+        <header class="rozvijime__header">
+          <figure class="rozvijime__header__image">
+            <img src="img/header/balon.png" alt="Létající balón">
+          </figure>
+          <div class="rozvijime__header__title">
+            <h1 class="rozvijime__header__title__text">Rozvíjíme vaše děti hrou,<br class="rozvijime__header__title__break"> bez námahy každý měsíc</h1>
+            <h3 class="rozvijime__header__subtitle">Bobobox je <span class="strong">výtvarná krabice</span><br class="rozvijime__header__subtitle__break"> pro děti od 4-8 let.</h3>
+            <h3 class="rozvijime__header__subtitle">Funguje jako <span class="strong">flexibilní předplatné</span><br class="rozvijime__header__subtitle__break"> nebo jako dárek.</h3>
+          </div>
+          <figure class="rozvijime__header__image">
+            <img src="img/header/raketa.png" alt="Raketa">
+          </figure>
         </header>
-        <section class="rozvijime">
-            <header class="rozvijime__header">
-                <img src="public/img/header/balon.png" alt="Létající balón">
-                <div class="rozvijime__header__title">
-                    <h1>Rozvíjíme vaše děti hrou, bez námahy každý měsíc</h1>
-                    <h3>Bobobox je <span class="strong">výtvarná krabice</span> pro děti od 4-8 let.</h3>
-                    <h3>Funguje jako <span class="strong">flexibilní předplatné</span> nebo jako dárek.</h3>
-                </div>
-                <img src="public/img/header/raketa.png" alt="Raketa">
-            </header>
-            <div class="prehrat-video">
-                <a href="" class="prehrat-video__link">
-                    <img src="public/img/header/play.png" alt="Přehrát video" class="prehrat-video__icon">
-                    <span class="prehrat-video__text">Přehrát video</span>
-                </a>
+        <div class="rozvijime__play-video">
+          <a href="https://www.youtube.com/watch?v=QgA293xIKYc" class="rozvijime__play-video__link">
+            <img src="img/header/play.png" alt="Přehrát video" class="rozvijime__play-video__icon">
+            <span class="rozvijime__play-video__text">Přehrát video</span>
+          </a>
+        </div>
+        <a href="" class="button button-objednat overlay">
+          <img class="button-objednat__kosik" src="img/header/cart_icon.png" alt="Objednat - košík">
+          <span class="button-objednat__title">Objednat</span>
+        </a>
+        <footer class="rozvijime__grass">
+          <img src="img/header/hrad.png" alt="Hrad" class="rozvijime__grass__image castle">
+          <img src="img/header/boy.png" alt="Kluk" class="rozvijime__grass__image boy">
+          <img src="img/header/platno.png" alt="Plátno" class="rozvijime__grass__image paint">
+          <img src="img/header/girl.png" alt="Holka" class="rozvijime__grass__image girl">
+          <img src="img/header/tree_bobo_bird.png" alt="Bobo u stromu" class="rozvijime__grass__image bobo">
+        </footer>
+      </section>
+      <section class="ficury">
+        <div class="ficury__background" data-rellax-speed="-7"></div>
+        <h1 class="ficury__title">Fíčury Boboboxu</h1>
+        <div class="ficury__playbox">
+          <a href="https://www.youtube.com/watch?v=DHz5AuT_OvI" class="ficury__playbox__play">
+            <img src="img/header/play.png" alt="Přehrát video" class="ficury__play-video__icon">
+          </a>
+        </div>
+      </section>
+      <section class="kreativni product-description right">
+        <aside
+           data-aos="fade-right"
+           data-aos-offset="100"
+           data-aos-easing="ease-in-sine"
+           class="product-image">
+           <figure>
+             <img src="img/product/kids.png" alt="Bobobox abc">
+           </figure>
+        </aside>
+        <main class="text-box">
+        <h1 class="kreativni__title product-title">Rozvíjíme vaše děti<br>kreativní zábavou</h1>
+        <p class="product-text">
+          Aktivity v boboboxu jsou setaveny tak aby<br>
+          u děti <span class="strong">rozvíjely zakladní dovednosti a<br>
+          kreativitu</span>. Navíc jsou vytvářeny zkušeným<br>
+          pedagogem.
+        </p>
+        </main>
+      </section>
+      <section class="vkazdem product-description left">
+        <aside
+           data-aos="fade-left"
+           data-aos-offset="100"
+           data-aos-easing="ease-in-sine"
+           class="product-image">
+           <figure>
+             <img src="img/product/aktivity_foto.png" alt="Aktivity">
+           </figure>
+        </aside>
+        <main class="text-box">
+        <h1 class="vkazdem__title product-title">V každém Boboboxu<br>najdete <span class="vkazdem__six">6</span> výtvarných<br>aktivit</h1>
+        <p class="product-text">
+        <span class="strong">Vyzkoušejte</span> si vyrábění z papíru, výtvarných<br>
+        hmot recyklovaného materiálu a spoustu<br>
+        dalšího, <span class="strong">co doma najdete!</span>
+        </p>
+        </main>
+      </section>
+      <section class="navody product-description right">
+        <aside
+           data-aos="fade-right"
+           data-aos-offset="100"
+           data-aos-easing="ease-in-sine"
+           class="product-image">
+           <figure>
+             <img src="img/product/navody.png" alt="Návody">
+           </figure>
+        </aside>
+        <main class="text-box">
+        <h1 class="navody__title product-title">Návody a příběh skřítka<br>Boba každý měsíc</h1>
+        <p class="product-text">
+          <span class="strong">Příběhy</span> skřítka Boba, jsou sestaveny tak, aby<br>
+          si je děti během <span class="strong">vyrábění prožily</span>.<br>
+          Mnohem více je to pak baví.
+        </p>
+        </main>
+      </section>
+      <section class="usetrite product-description left">
+        <aside
+           data-aos="fade-left"
+           data-aos-offset="100"
+           data-aos-easing="ease-in-sine"
+           class="product-image">
+           <figure>
+             <img src="img/product/clock.png" alt="Hodiny">
+           </figure>
+        </aside>
+        <main class="text-box">
+        <h1 class="usetrite__title product-title">Ušetříte čas vymýšlením<br>aktivit a sháněním<br>materiálu</h1>
+        <p class="product-text">
+          V každém boxu najdete <span class="strong">veškerý materiál</span> na<br>
+          výrobu. <span class="strong">Aktivity</span> jsou sestaveny tak, aby je<br>
+          zvládly děti jen s <span class="strong">lehkou pomocí</span>.
+        </p>
+        </main>
+      </section>
+      <section class="jakto">
+        <header>
+          <h1 class="jakto__title">Jak to všechno začalo</h1>
+        </header>
+        <div class="jakto__content">
+          <main class="jakto__text">
+          <p>
+            DIY and craft site for everyone who loves crafting with their<br>
+            kids at home or seeks inspiration for childrens at<br>
+            kindergarten or school :)
+          </p>
+          <p>
+            Hi everyone, my name is Reni, and I will share here some<br>
+            simple paper crafts I make. I am kindergarten teacher, so all<br>
+            my crafts are super easy to make, and my kids love them.<br>
+            I hope you like them!
+          </p>
+          <p>
+            DIY and craft site for everyone who loves crafting with their<br>
+            kids at home or seeks inspiration for childrens at<br>
+            kindergarten or school :)
+          </p>
+          <p>
+            Hi everyone, my name is Reni, and I will share here some<br>
+            simple paper crafts I make. I am kindergarten teacher, so all<br>
+            my crafts are super easy to make, and my kids love them.<br>
+            I hope you like them!
+          </p>
+          </main>
+          <aside class="jakto__photobox">
+            <figure>
+              <img class="jakto__photo" src="img/product/foto_renca_big.png" alt="Renata">
+            </figure>
+            <div class="bubble yellow">
+              <span class="title">200+</span>
+              <span class="subtitle">Výrobků</span>
+              <div class="arrow"></div>
             </div>
-            <a href="" class="button button-objednat">
-                <img class="button-objednat__kosik" src="public/img/header/cart_icon.png" alt="Objednat - košík">
-                <span class="button-objednat__title">Objednat</span>
+            <div class="bubble red">
+              <span class="title">40+</span>
+              <span class="subtitle">Videií</span>
+              <div class="arrow"></div>
+            </div>
+            <div class="bubble blue">
+              <span class="title">39.000</span>
+              <span class="subtitle">Fanoušků</span>
+              <div class="arrow"></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+      <section class="objednavka">
+        <header class="objednavka__header">
+          <h1 class="objednavka__title">Objednávka</h1>
+          <h3 class="objednavka__subtitle">Bobobox si můžete objednat jako měsíční předplatné,<br>nebo si ho vyzkoušet či darovat.</h3>
+        </header>
+        <main class="objednavka__content">
+        <img class="objednavka__content__bobo" src="img/pricing/bobo_corner.png" alt="Bobo">
+        <div class="objednavka__types">
+          <div class="objednavka__type">
+            <div>
+              <h1 class="objednavka__type__title">1 Box</h1>
+              <img class="objednavka__type__image" src="img/pricing/box_1.png" alt="1 Box">
+              <h1 class="objednavka__type__price">429,- Kč</h1>
+              <p class="objednavka__type__description">
+              Ideální na zkoušku nebo jako dárek
+              </p>
+            </div>
+            <a href="" class="objednavka__vybrat light overlay">Vybrat</a>
+          </div>
+          <div class="objednavka__type">
+            <div>
+              <h1 class="objednavka__type__title">Předplatné 3 boxy</h1>
+              <img class="objednavka__type__image" src="img/pricing/box_3.png" alt="3 boxy">
+              <h1 class="objednavka__type__price">1077,- Kč</h1>
+              <h3 class="objednavka__type__save">Ušetříte 779,- Kč</h3>
+              <h3 class="objednavka__type__save-per-box">359 Kč za box</h3>
+            </div>
+            <a href="" class="objednavka__vybrat overlay">Vybrat</a>
+          </div>
+          <div class="objednavka__type last">
+            <div>
+              <h1 class="objednavka__type__title">Předplatné 5 boxů<br>+ 1 box zdarma</h1>
+              <img class="objednavka__type__image" src="img/pricing/box_6.png" alt="5 1 boxů">
+              <div class="objednavka__type__free">Zdarma</div>
+              <h1 class="objednavka__type__price">1795,- Kč</h1>
+              <h3 class="objednavka__type__save">Ušetříte 779,- Kč</h3>
+              <h3 class="objednavka__type__save-per-box">359 Kč za box + <span class="green">1 box zdarma</span></h3>
+            </div>
+            <a href="" class="objednavka__vybrat overlay">Vybrat</a>
+          </div>
+        </div>
+        <div class="objednavka__recomend">
+          <h1 class="objednavka__recomend__title">Co na Bobobox říkají rodiče?</h1>
+          <div class="objednavka__reviews">
+            <div class="objednavka__review">
+              <p class="objednavka__review__text">
+                Bobobox už máme a pilně tvoříme. Jsme z<br>
+                něj nadšeni, dceru to velmi baví, už jsme<br>
+                vyrobili letícího čápa, žabičku i rybičku a<br>
+                taky hračku pro Boba. Určitě se objednáme<br>
+                další krabice!<br>
+                <br>
+                Dana Matoušová Brno
+              </p>
+              <div class="objednavka__review__check"></div>
+            </div>
+            <div class="objednavka__review">
+              <p class="objednavka__review__text">
+                Bobobox už máme a pilně tvoříme. Jsme z<br>
+                něj nadšeni, dceru to velmi baví, už jsme<br>
+                vyrobili letícího čápa, žabičku i rybičku a<br>
+                taky hračku pro Boba. Určitě se objednáme<br>
+                další krabice!<br>
+                <br>
+                Dana Matoušová Brno
+              </p>
+              <div class="objednavka__review__check"></div>
+            </div>
+            <div class="objednavka__review">
+              <p class="objednavka__review__text">
+                Bobobox už máme a pilně tvoříme. Jsme z<br>
+                něj nadšeni, dceru to velmi baví, už jsme<br>
+                vyrobili letícího čápa, žabičku i rybičku a<br>
+                taky hračku pro Boba. Určitě se objednáme<br>
+                další krabice!<br>
+                <br>
+                Dana Matoušová Brno
+              </p>
+              <div class="objednavka__review__check"></div>
+            </div>
+          </div>
+        </div>
+        </main>
+        <footer class="objednavka__footer">
+          <img class="objednavka__footer__img left-grass" src="img/email/grass_left.png" alt="Tráva">
+          <img class="objednavka__footer__img left-tree" src="img/email/tree_left.png" alt="Strom">
+          <img class="objednavka__footer__img squirrel" src="img/email/squirrel.png" alt="Veverka">
+          <img class="objednavka__footer__img cat-grass" src="img/email/cat_grass.png" alt="Kocour">
+          <img class="objednavka__footer__img right-tree" src="img/email/tree_right.png" alt="Strom">
+          <div class="objednavka__download">
+            <h1 class="objednavka__download__title">Potřebujete kreativní zábavu zábavu hned?<br>Žádný problém!</h1>
+            <h5 class="objednavka__download__subtitle">Stáhněte si zdarma šáblony, které si doma vytisknete;)</h5>
+            <input class="objednavka__download__input" type="text">
+            <a href="" class="objednavka__download__button overlay">Stáhnout šablonky</a>
+          </div>
+          <div class="objednavka__inspire">
+            <h1 class="objednavka__inspire__title">Nebo se inspirujte na</h1>
+            <img class="objednavka__inspire__arrow left" src="img/email/arrow.png" alt="Šipka levá">
+            <img class="objednavka__inspire__arrow right" src="img/email/arrow.png" alt="Šipka pravá">
+            <nav class="objednavka__inspire__buttons">
+              <a href="https://facebook.com/bobobox.cz" target="_facebook_bobobox" class="objednavka__inspire__button facebook overlay">
+                <img src="img/email/facebook_icon.png" alt="Facebook">
+                <span class="objednavka__inspire__button__text">Facebook</span>
+              </a>
+              <a href="https://www.youtube.com/channel/UCx8w7e3uWnzM_JIlAB-Fwlg" target="_youtube_bobobox" class="objednavka__inspire__button youtube overlay">
+                <img src="img/email/youtube_icon.png" alt="youTube">
+                <span class="objednavka__inspire__button__text">YouTube</span>
+              </a>
+            </nav>
+            <h3 class="objednavka__inspire__subtitle">Najdete tam desítky nápadů a videí na vyrábění s dětmi!</h3>
+          </div>
+        </footer>
+      </section>
+      <section class="kdozatim">
+        <h1 class="kdozatim__title">Kdo za tím stojí?</h1>
+        <h5 class="kdozatim__subtitle">Vyrobeno a navrženo s &hearts; v Brně</h5>
+        <div class="kdozatim__avatars">
+          <div class="kdozatim__avatars__box">
+            <figure class="kdozatim__avatar">
+              <img src="img/footer/renca_foto.png" alt="Avatar - Renata">
+              <figcaption class="kdozatim__avatar__caption">Renata</figcaption>
+            </figure>
+            <figure class="kdozatim__avatar">
+              <img src="img/footer/tom_foto.png" alt="Avatar - Tom">
+              <figcaption class="kdozatim__avatar__caption">Tom</figcaption>
+            </figure>
+          </div>
+          <div class="kdozatim__avatars__box">
+            <figure class="kdozatim__avatar">
+              <img src="img/footer/lada_foto.png" alt="Avatar - Láďa">
+              <figcaption class="kdozatim__avatar__caption">Láďa</figcaption>
+            </figure>
+            <figure class="kdozatim__avatar">
+              <img src="img/footer/bobo_foto.png" alt="Avatar - Bobo">
+              <figcaption class="kdozatim__avatar__caption">Bobo</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="kdozatim__arrows">
+          <img class="kdozatim__arrow first" src="img/footer/arrow_long.png" alt="Šipka">
+          <img class="kdozatim__arrow second" src="img/footer/arrow_small.png" alt="Šipka">
+          <img class="kdozatim__arrow third" src="img/footer/arrow_small.png" alt="Šipka">
+          <img class="kdozatim__arrow fourth" src="img/footer/arrow_long.png" alt="Šipka">
+        </div>
+        <h3 class="kdozatim__help-title">Jak vám můžeme pomoci?</h3>
+        <div class="kdozatim__contact">
+          <figure>
+            <img src="img/footer/phone_icon.png" alt="Kontakt - Telefon">
+          </figure>
+          <div class="kdozatim__contact__text">
+            <h1 class="kdozatim__phone">739 283 963</h1>
+            <a href="mailto:tom@bobobox.cz">
+              <h1 class="kdozatim__mail">tom@bobobox.cz</h1>
             </a>
-            <footer class="grass">
-                <img src="public/img/header/hrad.png" alt="Hrad" class="relative castle">
-                <img src="public/img/header/boy.png" alt="Kluk" class="relative boy">
-                <img src="public/img/header/platno.png" alt="Plátno" class="relative paint">
-                <img src="public/img/header/girl.png" alt="Holka" class="relative girl">
-                <img src="public/img/header/tree_bobo_bird.png" alt="Bobo u stromu" class="relative bobo">
-            </footer>
-        </section>
-        <section class="ficury">
-            <h1 class="ficury__title">Fíčury Boboboxu</h1>
-            <div class="ficury__playbox">
-                <a href="" class="ficury__playbox__play">
-                    <img src="public/img/header/play.png" alt="Přehrát video" class="prehrat-video__icon">
-                </a>
-            </div>
-        </section>
-        <section class="kreativni product-description right">
-            <aside class="product-image">
-                <figure>
-                    <img src="public/img/product/kids.png" alt="Bobobox abc">
-                </figure>
-            </aside>
-            <main class="text-box">
-                <h1 class="kreativni__title product-title">Rozvíjíme vaše děti<br>kreativní zábavou</h1>
-                <p class="product-text">
-                    Aktivity v boboboxu jsou setaveny tak aby<br>
-                    u děti <span class="strong">rozvíjely zakladní dovednosti a<br>
-                    kreativitu</span>. Navíc jsou vytvářeny zkušeným<br>
-                    pedagogem.
-                </p>
-            </main>
-        </section>
-        <section class="vkazdem product-description left">
-            <aside class="product-image">
-                <figure>
-                    <img src="public/img/product/aktivity_foto.png" alt="Aktivity">
-                </figure>
-            </aside>
-            <main class="text-box">
-                <h1 class="vkazdem__title product-title">V každém Boboboxu<br>najdete <span class="vkazdem__six">6</span> výtvarných<br>aktivit</h1>
-                <p class="product-text">
-                    <span class="strong">Vyzkoušejte</span> si vyrábění z papíru, výtvarných<br>
-                    hmot recyklovaného materiálu a spoustu<br>
-                    dalšího, <span class="strong">co doma najdete!</span>
-                </p>
-            </main>
-        </section>
-        <section class="navody product-description right">
-            <aside class="product-image">
-                <figure>
-                    <img src="public/img/product/navody.png" alt="Návody">
-                </figure>
-            </aside>
-            <main class="text-box">
-                <h1 class="navody__title product-title">Návody a příběh skřítka<br>Boba každý měsíc</h1>
-                <p class="product-text">
-                    <span class="strong">Příběhy</span> skřítka Boba, jsou sestaveny tak, aby<br>
-                    si je děti během <span class="strong">vyrábění prožily</span>.<br>
-                    Mnohem více je to pak baví.
-                </p>
-            </main>
-        </section>
-        <section class="usetrite product-description left">
-            <aside class="product-image">
-                <figure>
-                    <img src="public/img/product/clock.png" alt="Hodiny">
-                </figure>
-            </aside>
-            <main class="text-box">
-                <h1 class="usetrite__title product-title">Ušetříte čas vymýšlením<br>aktivit a sháněním<br>materiálu</h1>
-                <p class="product-text">
-                    V každém boxu najdete <span class="strong">veškerý materiál</span> na<br>
-                    výrobu. <span class="strong">Aktivity</span> jsou sestaveny tak, aby je<br>
-                    zvládly děti jen s <span class="strong">lehkou pomocí</span>.
-                </p>
-            </main>
-        </section>
-        <section class="jakto">
-            <header>
-                <h1 class="jakto__title">Jak to všechno začalo</h1>
-            </header>
-            <div class="jakto__content">
-                <main class="jakto__text">
-                    <p>
-                        DIY and craft site for everyone who loves crafting with their<br>
-                        kids at home or seeks inspiration for childrens at<br>
-                        kindergarten or school :)
-                    </p>
-                    <p>
-                        Hi everyone, my name is Reni, and I will share here some<br>
-                        simple paper crafts I make. I am kindergarten teacher, so all<br>
-                        my crafts are super easy to make, and my kids love them.<br>
-                        I hope you like them!
-                    </p>
-                    <p>
-                        DIY and craft site for everyone who loves crafting with their<br>
-                        kids at home or seeks inspiration for childrens at<br>
-                        kindergarten or school :)
-                    </p>
-                    <p>
-                        Hi everyone, my name is Reni, and I will share here some<br>
-                        simple paper crafts I make. I am kindergarten teacher, so all<br>
-                        my crafts are super easy to make, and my kids love them.<br>
-                        I hope you like them!
-                    </p>
-                </main>
-                <aside class="jakto__photobox">
-                    <figure>
-                        <img class="jakto__photo" src="public/img/product/foto_renca_big.png" alt="Renata">
-                    </figure>
-                    <div class="bubble yellow">
-                        <span class="title">200+</span>
-                        <span class="subtitle">Výrobků</span>
-                        <div class="arrow"></div>
-                    </div>
-                    <div class="bubble red">
-                        <span class="title">40+</span>
-                        <span class="subtitle">Videií</span>
-                        <div class="arrow"></div>
-                    </div>
-                    <div class="bubble blue">
-                        <span class="title">39.000</span>
-                        <span class="subtitle">Fanoušků</span>
-                        <div class="arrow"></div>
-                    </div>
-                </aside>
-            </div>
-        </section>
-        <section class="objednavka">
-            <header class="objednavka__header">
-                <h1 class="objednavka__title">Objednávka</h1>
-                <h3 class="objednavka__subtitle">Bobobox si můžete objednat jako měsíční předplatné,<br>nebo si ho vyzkoušet či darovat.</h3>
-            </header>
-            <main class="objednavka__content">
-                <div class="objednavka__types">
-                    <div class="objednavka__type">
-                        <div>
-                            <h1 class="objednavka__type__title">1 Box</h1>
-                            <img src="public/img/pricing/box_1.png" alt="1 Box">
-                            <h1 class="objednavka__type__price">429,- Kč</h1>
-                            <p class="objednavka__type__description">
-                                Ideální na zkoušku nebo jako dárek
-                            </p>
-                        </div>
-                        <a href="" class="objednavka__vybrat">Vybrat</a>
-                    </div>
-                    <div class="objednavka__type">
-                        <div>
-                            <h1 class="objednavka__type__title">Předplatné 3 boxy</h1>
-                            <img src="public/img/pricing/box_3.png" alt="3 boxy">
-                            <h1 class="objednavka__type__price">1077,- Kč</h1>
-                            <h3 class="objednavka__type__save">Ušetříte 779,- Kč</h3>
-                            <h3 class="objednavka__type__save-per-box">359 Kč za box</h3>
-                        </div>
-                        <a href="" class="objednavka__vybrat">Vybrat</a>
-                    </div>
-                    <div class="objednavka__type">
-                        <div>
-                            <h1 class="objednavka__type__title">Předplatné 5 boxů<br>+ 1 box zdarma</h1>
-                            <img src="public/img/pricing/box_6.png" alt="5 1 boxů">
-                            <div class="objednavka__type__free">Zdarma</div>
-                            <h1 class="objednavka__type__price">1795,- Kč</h1>
-                            <h3 class="objednavka__type__save">Ušetříte 779,- Kč</h3>
-                            <h3 class="objednavka__type__save-per-box">359 Kč za box + <span class="green">1 box zdarma</span></h3>
-                        </div>
-                        <a href="" class="objednavka__vybrat">Vybrat</a>
-                    </div>
-                </div>
-                <div class="objednavka__recomend">
-                    <h1 class="objednavka__recomend__title">Co na Bobobox říkají rodiče?</h1>
-                    <div class="objednavka__reviews">
-                        <div class="objednavka__review">
-                            <p class="objednavka__review__text">
-                                Bobobox už máme a pilně tvoříme. Jsme z<br>
-                                něj nadšeni, dceru to velmi baví, už jsme<br>
-                                vyrobili letícího čápa, žabičku i rybičku a<br>
-                                taky hračku pro Boba. Určitě se objednáme<br>
-                                další krabice!<br>
-                                <br>
-                                Dana Matoušová Brno
-                            </p>
-                            <div class="objednavka__review__check"></div>
-                        </div>
-                        <div class="objednavka__review">
-                            <p class="objednavka__review__text">
-                                Bobobox už máme a pilně tvoříme. Jsme z<br>
-                                něj nadšeni, dceru to velmi baví, už jsme<br>
-                                vyrobili letícího čápa, žabičku i rybičku a<br>
-                                taky hračku pro Boba. Určitě se objednáme<br>
-                                další krabice!<br>
-                                <br>
-                                Dana Matoušová Brno
-                            </p>
-                            <div class="objednavka__review__check"></div>
-                        </div>
-                        <div class="objednavka__review">
-                            <p class="objednavka__review__text">
-                                Bobobox už máme a pilně tvoříme. Jsme z<br>
-                                něj nadšeni, dceru to velmi baví, už jsme<br>
-                                vyrobili letícího čápa, žabičku i rybičku a<br>
-                                taky hračku pro Boba. Určitě se objednáme<br>
-                                další krabice!<br>
-                                <br>
-                                Dana Matoušová Brno
-                            </p>
-                            <div class="objednavka__review__check"></div>
-                        </div>
-                    </div>
-                </div>
-            </main>
-            <footer class="objednavka__footer">
-                <img class="objednavka__footer__img left-grass" src="public/img/email/grass_left.png" alt="Tráva">
-                <img class="objednavka__footer__img left-tree" src="public/img/email/tree_left.png" alt="Strom">
-                <img class="objednavka__footer__img squirrel" src="public/img/email/squirrel.png" alt="Veverka">
-                <img class="objednavka__footer__img cat-grass" src="public/img/email/cat_grass.png" alt="Kocour">
-                <img class="objednavka__footer__img right-tree" src="public/img/email/tree_right.png" alt="Strom">
-                <div class="objednavka__download">
-                    <h1 class="objednavka__download__title">Potřebujete kreativní zábavu zábavu hned?<br>Žádný problém!</h1>
-                    <h5 class="objednavka__download__subtitle">Stáhněte si zdarma šáblony, které si doma vytisknete;)</h5>
-                    <input class="objednavka__download__input" type="text">
-                    <a href="" class="objednavka__download__button">Stáhnout šablonky</a>
-                </div>
-                <div class="objednavka__inspire">
-                    <h1 class="objednavka__inspire__title">Nebo se inspirujte na</h1>
-                    <img class="objednavka__inspire__arrow left" src="public/img/email/arrow.png" alt="Šipka levá">
-                    <img class="objednavka__inspire__arrow right" src="public/img/email/arrow.png" alt="Šipka pravá">
-                    <nav class="objednavka__inspire__buttons">
-                        <a href="" class="objednavka__inspire__button facebook">
-                            <img src="public/img/email/facebook_icon.png" alt="Facebook">
-                            <span class="objednavka__inspire__button__text">Facebook</span>
-                        </a>
-                        <a href="" class="objednavka__inspire__button youtube">
-                            <img src="public/img/email/youtube_icon.png" alt="youTube">
-                            <span class="objednavka__inspire__button__text">YouTube</span>
-                        </a>
-                    </nav>
-                    <h3 class="objednavka__inspire__subtitle">Najdete tam desítky nápadů a videí na vyrábění s dětmi!</h3>
-                </div>
-            </footer>
-        </section>
-        <section class="kdozatim">
-            <h1 class="kdozatim__title">Kdo za tím stojí?</h1>
-            <h5 class="kdozatim__subtitle">Vyrobeno a navrženo s &hearts; v Brně</h5>
-            <div class="kdozatim__avatars">
-                <figure class="kdozatim__avatar">
-                    <img src="public/img/footer/renca_foto.png" alt="Avatar - Renata">
-                    <figcaption class="kdozatim__avatar__caption">Renata</figcaption>
-                </figure>
-                <figure class="kdozatim__avatar">
-                    <img src="public/img/footer/tom_foto.png" alt="Avatar - Tom">
-                    <figcaption class="kdozatim__avatar__caption">Tom</figcaption>
-                </figure>
-                <figure class="kdozatim__avatar">
-                    <img src="public/img/footer/lada_foto.png" alt="Avatar - Láďa">
-                    <figcaption class="kdozatim__avatar__caption">Láďa</figcaption>
-                </figure>
-                <figure class="kdozatim__avatar">
-                    <img src="public/img/footer/bobo_foto.png" alt="Avatar - Bobo">
-                    <figcaption class="kdozatim__avatar__caption">Bobo</figcaption>
-                </figure>
-            </div>
-            <div class="kdozatim__arrows">
-                <img class="kdozatim__arrow first" src="public/img/footer/arrow_long.png" alt="Šipka">
-                <img class="kdozatim__arrow second" src="public/img/footer/arrow_small.png" alt="Šipka">
-                <img class="kdozatim__arrow third" src="public/img/footer/arrow_small.png" alt="Šipka">
-                <img class="kdozatim__arrow fourth" src="public/img/footer/arrow_long.png" alt="Šipka">
-            </div>
-            <h3 class="kdozatim__help-title">Jak vám můžeme pomoci?</h3>
-            <div class="kdozatim__contact">
-                <figure>
-                    <img src="public/img/footer/phone_icon.png" alt="Kontakt - Telefon">
-                </figure>
-                <div class="kdozatim__contact__text">
-                    <h1 class="kdozatim__phone">739 283 963</h1>
-                    <a href="mailto:tom@bobobox.cz">
-                        <h1 class="kdozatim__mail">tom@bobobox.cz</h1>
-                    </a>
-                </div>
-                <figure>
-                    <a href="mailto:tom@bobobox.cz">
-                        <img src="public/img/footer/mail_icon.png" alt="Kontakt - email">
-                    </a>
-                </figure>
-            </div>
-        </section>
+          </div>
+          <figure>
+            <a href="mailto:tom@bobobox.cz">
+              <img src="img/footer/mail_icon.png" alt="Kontakt - email">
+            </a>
+          </figure>
+        </div>
+      </section>
     </main>
     <footer class="page-footer">
-        <a href="">Obchodní podmínky</a> a <a href="">Reklamační řád</a>
+      <a href="">Obchodní podmínky</a> a <a href="">Reklamační řád</a>
     </footer>
+    <script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script src="js/youtube_popup.jquery.js"></script>
+    <script src="js/aos.min.js"></script>
+    <script src="js/rellax.min.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
