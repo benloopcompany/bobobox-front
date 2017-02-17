@@ -323,7 +323,7 @@ section {
     height: 1194px;
     margin-top: -200px;
     position: absolute;
-    background-image: url('../img/header/ficury_background.png');
+    background-image: url('../img/header/box_b.jpg');
     background-position: center center;
     z-index: -1;
 }
@@ -801,7 +801,7 @@ section {
 
 .objednavka__review {
     width: 370px;
-    height: 210px;
+    height: 250px;
     border: rgb(191, 191, 191) 2px dashed;
     border-radius: 30px;
     background-color: white;
@@ -811,6 +811,7 @@ section {
 
 .objednavka__review__text {
     margin-top: 40px;
+    padding: 0 40px;
     letter-spacing: initial;
     font-weight: 400;
 }
