@@ -109,9 +109,9 @@ section {
 .overlay:hover:after {
     content: '\A';
     position: absolute;
-    width: 100%; 
+    width: 100%;
     height: 100%;
-    top: 0; 
+    top: 0;
     left: 0;
     border-radius: 25px;
     background:rgba(0,0,0,0.15);
@@ -126,12 +126,16 @@ section {
 .page-header {
     display: flex;
     justify-content: space-around;
-    align-items: flex-end;
-    height: 250px;
+    align-items: center;
+    height: 160px;
     background-color: rgb(92, 195, 245);
 }
 
-@media (max-width: 1400px) {
+.page-header__image {
+    transform: scale(0.7);
+}
+
+@media (max-width: 1200px) {
     .page-header__image__cloud {
         display: none;
     }
@@ -145,13 +149,23 @@ section {
     background-color: rgb(92, 195, 245);
     position: relative;
     color: white;
-    height: 850px;
+    min-height: 600px;
+    height: calc(100vh - 160px);
+}
+
+.rozvijime__main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 50px;
+    margin-bottom: 120px;
 }
 
 .rozvijime__grass {
     background-color: rgb(96, 179, 76);
     width: 100%;
-    height: 220px;
+    height: 120px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -168,6 +182,10 @@ section {
     .rozvijime__grass {
         display: none;
     }
+
+    .rozvijime__main {
+        margin-bottom: 40px;
+    }
 }
 
 .button-objednat {
@@ -181,18 +199,24 @@ section {
 
 .rozvijime__header {
     display: flex;
-    justify-content: flex-start;
+    width: 100%;
+    justify-content: space-around;
     align-items: center;
-    height: 250px;
 }
 
 .rozvijime__header__image {
-    width: 217px;
+    width: 131px;
     text-align: right;
-    transform: scale(0.8);
+    transform: scale(0.6);
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1400px) {
+    .rozvijime__header__image--rocket {
+        margin-left: -20px;
+    }
+}
+
+@media (max-width: 1350px) {
     .rozvijime__header__image {
         display: none;
     }
@@ -203,7 +227,7 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 30px;
+    padding-top: 20px;
     width: 1010px;
 }
 
@@ -233,7 +257,7 @@ section {
     font-size: 30pt;
     line-height: 36pt;
     text-align: center;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
 }
 
 .button-objednat {
@@ -253,10 +277,12 @@ section {
 }
 
 .rozvijime__play-video {
-    height: 300px;
+    height: 200px;
     display: flex;
+    flex-grow: 1;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .rozvijime__play-video__link {
@@ -279,31 +305,49 @@ section {
 }
 
 .rozvijime__grass__image.girl {
-    left: calc(50% + 140px);
-    bottom: 140px;
+    right: 25%;
+    bottom: 45px;
+}
+
+@media (max-width: 1600px) {
+    .rozvijime__grass__image.girl {
+        left: calc(50% + 140px);
+    }
 }
 
 .rozvijime__grass__image.paint {
-    left: calc(50% + 330px);
-    bottom: 170px;
+    right: 21%;
+    bottom: 70px;
+}
+
+@media (max-width: 1600px) {
+    .rozvijime__grass__image.paint {
+        left: calc(50% + 330px);
+    }
 }
 
 .rozvijime__grass__image.bobo {
-    left: calc(50% + 500px);
-    bottom: 184px;
+    right: 5%;
+    bottom: 84px;
 }
 
 .rozvijime__grass__image.boy {
-    left: calc(50% - 400px);
-    bottom: 140px;
+    left: 25%;
+    bottom: 45px;
+}
+
+@media (max-width: 1600px) {
+    .rozvijime__grass__image.boy {
+        left: calc(50% - 400px);
+    }
 }
 
 .rozvijime__grass__image.castle {
-    left: calc(50% - 800px);
-    bottom: 174px;
+    left: -70px;
+    bottom: 74px;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1300px) {
     .rozvijime__grass__image.bobo,
     .rozvijime__grass__image.castle {
         display: none;
@@ -320,12 +364,21 @@ section {
 
 .ficury__background {
     width: 100%;
+    min-width: 600px;
     height: 1194px;
-    margin-top: -200px;
+    margin-top: -300px;
     position: absolute;
     background-image: url('../img/header/box_b.jpg');
     background-position: center center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
     z-index: -1;
+}
+
+@media (max-width: 1000px) {
+    .ficury__background {
+        background-size: 1000px auto;
+    }
 }
 
 .ficury__playbox {
@@ -361,7 +414,7 @@ section {
     border-color: transparent;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1200px) {
     .product-description {
         flex-direction: column;
         height: 900px;
@@ -385,7 +438,6 @@ section {
     letter-spacing: initial;
     font-size: 18pt;
     line-height: 24pt;
-    max-width: 480px;
 }
 
 .product-description.right .text-box {
@@ -410,6 +462,24 @@ section {
 
 .usetrite .text-box {
     margin-right: 120px;
+}
+
+@media (max-width: 1400px) {
+    .kreativni .text-box {
+        margin-left: 100px;
+    }
+
+    .vkazdem .text-box {
+        margin-right: 70px;
+    }
+
+    .navody .text-box {
+        margin-left: 30px;
+    }
+
+    .usetrite .text-box {
+        margin-right: 60px;
+    }
 }
 
 .product-image {
@@ -478,7 +548,7 @@ section {
     text-align: justify;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1200px) {
     .jakto {
         height: auto;
     }
@@ -785,19 +855,19 @@ section {
     align-items: center;
 }
 
-    @media (max-width: 1200px) {
-    .objednavka__recomend__title {
-        margin-top: 70px;
-    }
+@media (max-width: 1200px) {
+  .objednavka__recomend__title {
+      margin-top: 70px;
+  }
 
-    .objednavka__reviews {
-        flex-direction: column;
-    }
+  .objednavka__reviews {
+      flex-direction: column;
+  }
 
-    .objednavka__reviews .objednavka__review {
-        margin: 30px 15px;
-    }
-    }
+  .objednavka__reviews .objednavka__review {
+      margin: 30px 15px;
+  }
+}
 
 .objednavka__review {
     width: 370px;

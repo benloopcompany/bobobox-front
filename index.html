@@ -22,9 +22,9 @@
   <body>
     <main class="page-content">
       <header class="page-header">
-        <img class="page-header__image__cloud" src="img/header/cloud_left.png" alt="Levý mráček">
-        <img src="img/header/box.png" alt="Bobobox box">
-        <img class="page-header__image__cloud" src="img/header/cloud_right.png" alt="Pravý mráček">
+        <img class="page-header__image page-header__image--cloud" src="img/header/cloud_left.png" alt="Levý mráček">
+        <img class="page-header__image page-header__image--box"src="img/header/box.png" alt="Bobobox box">
+        <img class="page-header__image page-header__image--cloud" src="img/header/cloud_right.png" alt="Pravý mráček">
       </header>
       <section class="rozvijime">
         <header class="rozvijime__header">
@@ -36,20 +36,22 @@
             <h3 class="rozvijime__header__subtitle">Bobobox je <span class="strong">výtvarná krabice</span><br class="rozvijime__header__subtitle__break"> pro děti od 4-8 let.</h3>
             <h3 class="rozvijime__header__subtitle">Funguje jako <span class="strong">flexibilní předplatné</span><br class="rozvijime__header__subtitle__break"> nebo jako dárek.</h3>
           </div>
-          <figure class="rozvijime__header__image">
+          <figure class="rozvijime__header__image rozvijime__header__image--rocket">
             <img src="img/header/raketa.png" alt="Raketa">
           </figure>
         </header>
-        <div class="rozvijime__play-video">
-          <a href="https://www.youtube.com/watch?v=QgA293xIKYc" class="rozvijime__play-video__link">
-            <img src="img/header/play.png" alt="Přehrát video" class="rozvijime__play-video__icon">
-            <span class="rozvijime__play-video__text">Přehrát video</span>
+        <main class="rozvijime__main">
+          <div class="rozvijime__play-video">
+            <a href="https://www.youtube.com/watch?v=QgA293xIKYc" class="rozvijime__play-video__link">
+              <img src="img/header/play.png" alt="Přehrát video" class="rozvijime__play-video__icon">
+              <span class="rozvijime__play-video__text">Přehrát video</span>
+            </a>
+          </div>
+          <a href="https://bobobox.typeform.com/to/qMMmeb" class="button-objednat overlay typeform-share">
+            <img class="button-objednat__kosik" src="img/header/cart_icon.png" alt="Objednat - košík">
+            <span class="button-objednat__title button">Objednat</span>
           </a>
-        </div>
-        <a href="https://bobobox.typeform.com/to/qMMmeb" data-mode="1" class="button-objednat overlay typeform-share">
-          <img class="button-objednat__kosik" src="img/header/cart_icon.png" alt="Objednat - košík">
-          <span class="button button-objednat__title">Objednat</span>
-        </a>
+        </main>
         <footer class="rozvijime__grass">
           <img src="img/header/hrad.png" alt="Hrad" class="rozvijime__grass__image castle">
           <img src="img/header/boy.png" alt="Kluk" class="rozvijime__grass__image boy">
@@ -116,13 +118,13 @@
            </figure>
         </aside>
         <main class="text-box">
-        <h1 class="navody__title product-title">Celým Boboboxem provádí příběh skřítka Boba</h1>
-        <p class="product-text">
-          <span class="strong">Příběh</span> skřítka Boba je sestaven tak,
-          aby děti <span class="strong">motivoval</span> k vyrábění.
-          Když děti vidí smysl a důvod proč tvořit,
-          vyrábí <span class="strong">s velkou chutí a nadšením</span>.
-        </p>
+          <h1 class="navody__title product-title">Celým Boboboxem provádí příběh skřítka Boba</h1>
+          <p class="product-text">
+            <span class="strong">Příběh</span> skřítka Boba je sestaven tak,
+            aby děti <span class="strong">motivoval</span> k vyrábění.
+            Když děti vidí smysl a důvod proč tvořit,
+            vyrábí <span class="strong">s velkou chutí a nadšením</span>.
+          </p>
         </main>
       </section>
       <section class="usetrite product-description left">
@@ -136,11 +138,11 @@
            </figure>
         </aside>
         <main class="text-box">
-        <h1 class="usetrite__title product-title">Bobobox vám ušetři čas</h1>
-        <p class="product-text">
-          V Boboboxu najdete návody a <span class="strong">veškeré materiály</span> k vyrábění,
-          tím vám <span class="strong">ušetří čas</span> vymýšlením aktivit a sháněním materiálů.
-        </p>
+          <h1 class="usetrite__title product-title">Bobobox vám ušetři čas</h1>
+          <p class="product-text">
+            V Boboboxu najdete návody a <span class="strong">veškeré materiály</span> k vyrábění,
+            tím vám <span class="strong">ušetří čas</span> vymýšlením aktivit a sháněním materiálů.
+          </p>
         </main>
       </section>
       <section class="jakto">
@@ -376,15 +378,6 @@
     <!-- begin typeform -->
     <script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}id=id+'_';if(!gi.call(d,id)){qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)}})()</script>
     <!-- end typeform -->
-
-
-    <!-- begin olark code -->
-    <script type='text/javascript'>
-    window.olark||(function(k){var g=window,j=document,a=g.location.protocol=="https:"?"https:":"http:",i=k.name,b="load",h="addEventListener";(function(){g[i]=function(){(c.s=c.s||[]).push(arguments)};var c=g[i]._={},f=k.methods.length;while(f--){(function(l){g[i][l]=function(){g[i]("call",l,arguments)}})(k.methods[f])}c.l=k.loader;c.i=arguments.callee;c.p={0:+new Date};c.P=function(l){c.p[l]=new Date-c.p[0]};function e(){c.P(b);g[i](b)}g[h]?g[h](b,e,false):g.attachEvent("on"+b,e);c.P(1);var d=j.createElement("script"),m=document.getElementsByTagName("script")[0];d.type="text/javascript";d.async=true;d.src=a+"//"+c.l;m.parentNode.insertBefore(d,m);c.P(2)})()})({loader:(function(a){return "static.olark.com/jsclient/loader1.js?ts="+(a?a[1]:(+new Date))})(document.cookie.match(/olarkld=([0-9]+)/)),name:"olark",methods:["configure","extend","declare","identify"]});
-    // Please put your Olark Site ID here in place of the X's.
-    olark.identify('9306-400-10-2503');
-    </script>
-    <!-- end olark code -->
 
   </body>
 </html>
