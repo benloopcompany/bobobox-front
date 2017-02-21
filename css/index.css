@@ -414,6 +414,10 @@ section {
     border-color: transparent;
 }
 
+.product-description .text-box {
+    width: 50%;
+}
+
 @media (max-width: 1200px) {
     .product-description {
         flex-direction: column;
