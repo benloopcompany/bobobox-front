@@ -549,7 +549,12 @@ section {
 
 .jakto__text p {
     font-size: 16pt;
-    text-align: justify;
+    text-align: left;
+}
+
+.jakto__text a {
+    color: black;
+    text-decoration: underline;
 }
 
 @media (max-width: 1200px) {
@@ -664,7 +669,7 @@ section {
 
 .objednavka__header {
     background-color: rgb(194, 79, 79);
-    height: 420px;
+    height: 480px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -683,6 +688,15 @@ section {
     font-weight: 500;
     letter-spacing: initial;
     color: white;
+}
+
+h4.objednavka__subtitle {
+    font-size: 16pt;
+    max-width: 50%;
+    margin-top: 20px;
+    color: #ddd;
+    font-style: italic;
+    font-weight: normal;
 }
 
 .objednavka__content {
@@ -1153,6 +1167,10 @@ section {
     margin-bottom: 60px;
 }
 
+.kdozatim__subtitle span {
+    color: red;
+}
+
 .kdozatim__avatars {
     display: flex;
     flex-direction: row;
@@ -1252,8 +1270,8 @@ section {
     width: 100%;
     text-align: center;
     color: black;
-    font-size: 8pt;
-    padding: 10px 0;
+    font-size: 14pt;
+    padding: 30px 0;
     letter-spacing: initial;
     font-weight: 400;
 }
