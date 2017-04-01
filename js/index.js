@@ -20,3 +20,9 @@ jQuery(function(){
 
 var rellax = new Rellax('.ficury__background');
 var aos = AOS.init();
+
+if (typeof zenscroll != 'undefined') {
+  var defaultDuration = 777; // ms
+  var edgeOffset = 150; // px
+  zenscroll.setup(defaultDuration, edgeOffset);
+}

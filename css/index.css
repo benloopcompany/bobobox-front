@@ -102,6 +102,13 @@ section {
     width: 100%;
 }
 
+.icon-arrow_down {
+    color: #fff;
+    margin: 60% auto;
+    cursor: pointer;
+    color: rgba(255,255,255,0.3);
+}
+
 .overlay {
     position: relative;
     transition: all 1s;
@@ -265,6 +272,10 @@ section {
     padding-bottom: 20px;
 }
 
+.rozvijime__header__title__text {
+    font-size: 38pt;
+}
+
 .button-objednat {
     display: flex;
     flex-direction: row;
@@ -358,6 +369,141 @@ section {
         display: none;
     }
 }
+
+.prokohoje,
+.prokohoneni,
+.papermagic {
+    background-color: rgb(96, 179, 76);
+    border-bottom: rgb(191, 191, 191) 1px dashed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+}
+
+
+.prokohoneni,
+.papermagic {
+    background-color: white;
+    border-bottom: none;
+}
+
+.prokohoneni {
+    padding-top: 100px;
+    height: 320px;
+}
+
+.papermagic {
+    height: 250px;
+}
+
+.papermagic figure {
+    min-width: 200px;
+    text-align: center;
+}
+
+.papermagic figure h3 {
+    font-size: 32pt;
+}
+
+.papermagic figure h4 {
+    font-size: 14pt;
+}
+
+.prokohoje ul,
+.prokohoneni ul {
+    padding: 25px;
+}
+
+.prokohoje .prokohoje__title,
+.prokohoje .product-text {
+    color: #fff;
+}
+
+.prokohoneni .prokohoneni__title {
+    color: orange;
+}
+
+.prokohoje .product-title,
+.prokohoneni .product-title {
+    max-width: none;
+    margin-bottom: 0;
+}
+
+.prokohoje .product-text,
+.prokohoneni .product-text {
+    font-size: 16pt;
+}
+
+.prokohoneni .text-box {
+    margin-right: 180px;
+}
+
+.prokohoneni a {
+    color: black;
+    text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+    .prokohoje,
+    .prokohoneni,
+    .papermagic {
+        flex-direction: column;
+        height: auto;
+        padding: 50px 10px;
+    }
+
+    .prokohoje .product-image,
+    .prokohoneni .product-image {
+        display: none;
+    }
+
+    .papermagic figure {
+        min-width: none;
+    }
+
+    .prokohoneni .text-box {
+        margin-right: 0;
+    }
+}
+
+.papermagic figure h3,
+.papermagic figure h4 {
+    font-family: 'Baloo Paaji', cursive;
+}
+
+.papermagic .papermagic__logo img {
+    align-items: flex-start;
+}
+
+.papermagic .papermagic__fans {
+    color: #0995db;
+}
+
+.papermagic .papermagic__crafts {
+    color: #8abf00;
+}
+
+.papermagic .papermagic__videos {
+    color: #ff5247;
+}
+
+.papermagic__fb {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px;
+}
+
+.papermagic__fb h2 {
+  color: rgb(7, 93, 153);
+  margin-bottom: 50px;
+  font-size: 26pt;
+}
+
 
 .ficury {
     height: 660px;
