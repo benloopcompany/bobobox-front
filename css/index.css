@@ -48,7 +48,8 @@ a:active {
     color: white;
 }
 
-h1, button, .button,
+h1, h2, button,
+.button,
 .bubble .title,
 .bubble .subtitle,
 .objednavka__vybrat,
@@ -68,11 +69,11 @@ h1, button, .button,
     letter-spacing: 1.5pt;
 }
 
-h1 {
+h1, h2 {
     color: white;
 }
 
-h2,h3,h4,h5,h6,
+h3,h4,h5,h6,
 .rozvijime__play-video__text,
 .product-text,
 .jakto__text,
