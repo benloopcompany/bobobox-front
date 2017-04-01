@@ -234,6 +234,10 @@ section {
 
 .rozvijime__header__subtitle {
     text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1.5pt;
+    font-size: 20pt;
 }
 
 @media (min-width: 1100px) {
