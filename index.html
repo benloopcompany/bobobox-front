@@ -20,9 +20,23 @@
     <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/favicon-standard-ipad.png">
     <!-- Standard iPhone Touch Icon-->
     <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/favicon-standard-iphone.png">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=1">
   </head>
   <body>
-    <main class="page-content">
+    <main id="uvod" class="page-content">
+      <nav class="page-nav">
+        <ul>
+          <li class="first"><a href="#uvod">Úvod</a></li>
+          <li><a href="#o-produktu">O produktu</a></li>
+          <li><a href="#prokohoje">Pro koho je</a></li>
+          <li><a href="#o-nas">O nás</a></li>
+          <li><a href="#objednavka">Objednávka</a></li>
+          <li><a href="#caste-dotazy">Časte dotazy</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+        <a href="javascript:void(0);" id="mobile-menu-btn"><span>&nbsp;</span></a>
+      </nav>
+
       <header class="page-header">
         <img class="page-header__image page-header__image--cloud" src="img/header/cloud_left.png" alt="Levý mráček">
         <img class="page-header__image page-header__image--box"src="img/header/bobobox.png" alt="Bobobox Logo">
@@ -35,7 +49,7 @@
           </figure>
           <div class="rozvijime__header__title">
             <h2 class="rozvijime__header__title__text">Pomáháme vám přivést děti ke tvoření.</h2>
-            <h1 class="rozvijime__header__subtitle">Bobobox je <span class="strong">výtvarná krabice s příběhem</span><br class="rozvijime__header__subtitle__break"> pro děti od 4 do 8 let.</h1>
+            <h1 class="rozvijime__header__subtitle">Bobobox je <span class="strong">výtvarná krabice s příběhem</span><br class="rozvijime__header__subtitle__break"> pro děti od 4 do 8 let.<br />Funguje jako měsíční předplatné nebo jednorázový nákup.</h1>
           </div>
           <figure class="rozvijime__header__image rozvijime__header__image--rocket">
             <img src="img/header/raketa.png" alt="Raketa">
@@ -52,6 +66,7 @@
             <img class="button-objednat__kosik" src="img/header/cart_icon.png" alt="Objednat - košík">
             <span class="button-objednat__title button">Objednat</span>
           </a>
+                    
         </main>
         <footer class="rozvijime__grass">
           <img src="img/header/hrad.png" alt="Hrad" class="rozvijime__grass__image castle">
@@ -59,11 +74,105 @@
           <img src="img/header/platno.png" alt="Plátno" class="rozvijime__grass__image paint">
           <img src="img/header/girl.png" alt="Holka" class="rozvijime__grass__image girl">
           <img src="img/header/tree_bobo_bird.png" alt="Bobo u stromu" class="rozvijime__grass__image bobo">
-          <a data-scroll href="#prokohoje">
+          <a data-scroll href="#vice">
             <i class="fa fa-angle-down fa-4x icon-arrow_down" aria-hidden="true"></i>
           </a>
         </footer>
       </section>
+      
+      <section id="vice" class="foto_reference">
+          <aside
+           <figure>
+             <img src="img/split/foto.png" alt="Reference">
+           </figure>
+          </aside>
+      </section>
+      
+      <h2 id="o-produktu" class="o_cem__title">O čem Bobobox je?</h2>
+      
+      <section class="kreativni product-description right">
+        <aside
+           data-aos="fade-right"
+           data-aos-offset="100"
+           data-aos-easing="ease-in-sine"
+           class="product-image">
+           <figure>
+             <img src="img/product/kids.png" alt="Bobobox abc">
+           </figure>
+        </aside>
+        <main class="text-box">
+          <h2 class="kreativni__title product-title">Rozvijíme vaše děti kreativní zábavou</h2>
+          <p class="product-text">
+            Aktivity v Boboboxu jsou sestaveny tak, aby  u dětí <span class="strong">rozvíjely základní dovednosti a kreativitu.</span> Navíc jsou vytvářeny zkušeným pedagogem.
+          </p>
+        </main>
+      </section>
+      <div class="product-line"></div>
+      <section class="vkazdem product-description left">
+        <aside
+           data-aos="fade-left"
+           data-aos-offset="100"
+           data-aos-easing="ease-in-sine"
+           class="product-image">
+           <figure>
+             <img src="img/product/aktivity_foto.png" alt="Aktivity">
+           </figure>
+        </aside>
+        <main class="text-box">
+          <h2 class="vkazdem__title product-title">V každém Boboboxu najdete <span class="vkazdem__six">6</span> výtvarných aktivit</h2>
+          <p class="product-text">
+            <span class="strong">Vyzkoušíte</span> si vyrábění z papíru, výtvarných hmot recyklovaného materiálu a spoustu dalšího,
+            <span class="strong">co doma nenajdete!</span>.
+        </p>
+        </main>
+      </section>
+      <div class="product-line"></div>
+      <section class="navody product-description right">
+        <aside
+           data-aos="fade-right"
+           data-aos-offset="100"
+           data-aos-easing="ease-in-sine"
+           class="product-image">
+           <figure>
+             <img src="img/product/navody.png" alt="Návody">
+           </figure>
+        </aside>
+        <main class="text-box">
+          <h2 class="navody__title product-title">Návody a příběh skřítka Boba každý měsíc</h2>
+          <p class="product-text">
+            <span class="strong">Příběhy</span> skřítka Boba jsou sestaveny tak,
+            aby si je děti během <span class="strong">vyrábění prožily</span>.
+            Mbnohem více je to pak baví.
+          </p>
+        </main>
+      </section>
+      <div class="product-line"></div>
+      <section class="usetrite product-description left">
+        <aside
+           data-aos="fade-left"
+           data-aos-offset="100"
+           data-aos-easing="ease-in-sine"
+           class="product-image">
+           <figure>
+             <img src="img/product/clock.png" alt="Hodiny">
+           </figure>
+        </aside>
+        <main class="text-box">
+          <h2 class="usetrite__title product-title">Ušetříte čas vymýšlením aktivit a sháněním materiálu</h2>
+          <p class="product-text">
+            V každém boxu najdete <span class="strong">veškerý materiál</span> na výrobu. <span class="strong">Aktivity</span> jsou sestaveny tak, aby je zvládly děti jen s <span class="strong">lehkou pomocí</span>.
+          </p>
+        </main>
+        
+      </section>
+      
+      <section class="ukazka">
+          <a href="https://youtu.be/TqBMCGzOgd8" class="ficury__playbox__play">
+            <img src="img/split/ukazka.jpg" alt="Přehrát video" class="ficury__play-video__icon">
+          </a>
+      </section>
+
+      
       <section id="prokohoje" class="prokohoje left">
         <aside
            data-aos="fade-left"
@@ -77,12 +186,13 @@
         <main class="text-box">
           <h2 class="prokohoje__title product-title">Kdo bude Bobobox milovat?</h2>
           <ul class="product-text">
-            <li><strong>Zaneprázdnění rodiče</strong>, kteří nemají čas shánět a vymýšlet kreativní zábavu.</li>
+            <li><strong class="strong">Zaneprázdnění rodiče</strong>, kteří nemají čas shánět a vymýšlet kreativní zábavu.</li>
             <li>Rodiče, kteří chtějí <strong>přivést děti ke tvoření a vyrábění</strong>.</li>
-            <li>Rodiny které rády tvoří a chtějí zkusit <strong>nové materiály a techniky</strong>.</li>
+            <li>Rodiny které rády tvoří a <span class="strong">chtějí zkusit <strong>nové materiály a techniky</strong></span>.</li>
             <li>Ti kterým <strong>nejde vymýšlení</strong> kreativní zábavy, ale dítě to vyžaduje.</li>
             <li>Ten kdo chce udělat radost <strong>smysluplným dárkem</strong>.</li>
           </ul>
+          
         </main>
       </section>
       <section id="prokohoneni" class="prokohoneni left">
@@ -103,116 +213,47 @@
           </ul>
         </main>
       </section>
-      <section id="papermagic" class="papermagic">
-         <figure class="papermagic__logo">
-           <img src="img/split/paper_magic_logo.png" alt="Paper Magic logo">
-         </figure>
-         <figure class="papermagic__fans">
-           <h3>290k+</h3>
-           <h4>Fanoušků</h3>
-         </figure>
-         <figure class="papermagic__crafts">
-           <h3>400+</h3>
-           <h4>Výrobku a nápadů</h3>
-         </figure>
-         <figure class="papermagic__videos">
-           <h3>Denně</h3>
-           <h4>Nové video</h3>
-         </figure>
-      </section>
-      <section class="papermagic__fb">
-        <h2>Inspirujte se na našem facebooku</h2>
-        <a href="https://www.facebook.com/papermagiccraft" target="_facebook_papermagic" class="objednavka__inspire__button facebook overlay">
-          <img src="img/email/facebook_icon.png" alt="Facebook">
-          <span class="objednavka__inspire__button__text">Facebook</span>
-        </a>
-      </section>
-      <section id="ficury" class="ficury">
-        <div class="ficury__background" data-rellax-speed="-3"></div>
-        <h2 class="ficury__title">Ukázka aktualního Boboboxu</h2>
-        <div class="ficury__playbox">
-          <a href="https://www.youtube.com/watch?v=WSHhQ0JgNjQ" class="ficury__playbox__play">
-            <img src="img/header/play.png" alt="Přehrát video" class="ficury__play-video__icon">
-          </a>
+      
+      <div class="papermagicbg">
+        <img src="img/split/ref-foto-left.png" class="papermagic__refleft" alt="" data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in-sine">
+        <img src="img/split/ref-foto-right.png" class="papermagic__refright" alt="" data-aos="fade-left" data-aos-offset="100" data-aos-easing="ease-in-sine">
+      
+        <h2>Kouzlíme s papírem pro děti na celém světě</h2>
+                       
+        <section id="papermagic" class="papermagic">
+           <figure class="papermagic__fans">
+             <h3>315 000</h3>
+             <h4>Fanoušků</h3>
+           </figure>
+           <figure class="papermagic__views">
+             <h3>35 000 000+</h3>
+             <h4>Shlédnutí videa</h3>
+           </figure>
+           <figure class="papermagic__crafts">
+             <h3>400+</h3>
+             <h4>Výrobku a nápadů</h3>
+           </figure>
+           <figure class="papermagic__videos">
+             <h3>Denně</h3>
+             <h4>Nové video</h3>
+           </figure>
+        </section>
+
+        <div class="papermagic__logo">
+          <img src="img/split/paper_magic_logo.png" alt="Paper Magic logo">
         </div>
-      </section>
-      <section class="kreativni product-description right">
-        <aside
-           data-aos="fade-right"
-           data-aos-offset="100"
-           data-aos-easing="ease-in-sine"
-           class="product-image">
-           <figure>
-             <img src="img/product/kids.png" alt="Bobobox abc">
-           </figure>
-        </aside>
-        <main class="text-box">
-          <h2 class="kreativni__title product-title">Bobobox rozvíjí vaše děti aktivní zábavou</h2>
-          <p class="product-text">
-            Aktivity v Boboboxu jsou sestavovány zkušeným pedagogem tak,
-            aby v dětech <span class="strong">rozvíjely základní dovednosti, znalosti a kreativitu</span>.
-          </p>
-        </main>
-      </section>
-      <section class="vkazdem product-description left">
-        <aside
-           data-aos="fade-left"
-           data-aos-offset="100"
-           data-aos-easing="ease-in-sine"
-           class="product-image">
-           <figure>
-             <img src="img/product/aktivity_foto.png" alt="Aktivity">
-           </figure>
-        </aside>
-        <main class="text-box">
-          <h2 class="vkazdem__title product-title">V každém Boboboxu najdete <span class="vkazdem__six">6</span> výtvarných aktivit</h2>
-          <p class="product-text">
-            Bobobox <span class="strong">obsahuje materiály</span>,
-            které doma běžně nenajdete.
-            Děti si vyzkouší vyrábění z různých výtvarných hmot,
-            papíru a <span class="strong">recyklovaných materiálů</span>.
-        </p>
-        </main>
-      </section>
-      <section class="navody product-description right">
-        <aside
-           data-aos="fade-right"
-           data-aos-offset="100"
-           data-aos-easing="ease-in-sine"
-           class="product-image">
-           <figure>
-             <img src="img/product/navody.png" alt="Návody">
-           </figure>
-        </aside>
-        <main class="text-box">
-          <h2 class="navody__title product-title">Celým Boboboxem provádí příběh skřítka Boba</h2>
-          <p class="product-text">
-            <span class="strong">Příběh</span> skřítka Boba je sestaven tak,
-            aby děti <span class="strong">motivoval</span> k vyrábění.
-            Když děti vidí smysl a důvod proč tvořit,
-            vyrábí <span class="strong">s velkou chutí a nadšením</span>.
-          </p>
-        </main>
-      </section>
-      <section class="usetrite product-description left">
-        <aside
-           data-aos="fade-left"
-           data-aos-offset="100"
-           data-aos-easing="ease-in-sine"
-           class="product-image">
-           <figure>
-             <img src="img/product/clock.png" alt="Hodiny">
-           </figure>
-        </aside>
-        <main class="text-box">
-          <h2 class="usetrite__title product-title">Bobobox vám ušetří čas</h2>
-          <p class="product-text">
-            V Boboboxu najdete návody a <span class="strong">veškeré materiály</span> k vyrábění,
-            tím vám <span class="strong">ušetří čas</span> vymýšlením aktivit a sháněním materiálů.
-          </p>
-        </main>
-      </section>
-      <section class="jakto">
+
+
+        <section class="papermagic__fb">
+          <a href="https://www.facebook.com/papermagiccraft" target="_facebook_papermagic" class="objednavka__inspire__button facebook overlay">
+            <img src="img/email/facebook_icon.png" alt="Facebook">
+            <span class="objednavka__inspire__button__text">Přidejte se</span>
+          </a>
+        </section>  
+
+      </div>
+      
+      <section id="o-nas" class="jakto">
         <header>
           <h2 class="jakto__title">Jak to všechno začalo?</h2>
         </header>
@@ -237,31 +278,16 @@
           </main>
           <aside class="jakto__photobox">
             <figure>
-              <img class="jakto__photo" src="img/product/foto_renca_big.png" alt="Renata">
+              <img class="jakto__photo" src="img/product/foto_renca_big.jpg" alt="Renata">
             </figure>
-            <div class="bubble yellow">
-              <span class="title">400+</span>
-              <span class="subtitle">Výrobků</span>
-              <div class="arrow"></div>
-            </div>
-            <div class="bubble red">
-              <span class="title">100+</span>
-              <span class="subtitle">Videií</span>
-              <div class="arrow"></div>
-            </div>
-            <div class="bubble blue">
-              <span class="title">290K</span>
-              <span class="subtitle">Fanoušků</span>
-              <div class="arrow"></div>
-            </div>
           </aside>
         </div>
       </section>
-      <section class="objednavka">
+      <section id="objednavka" class="objednavka">
         <header class="objednavka__header">
-          <h2 class="objednavka__title">Objednávka</h2>
+          <h2 class="objednavka__title">Objednávka Boboboxu</h2>
+          <h2 class="objednavka__title_vydani">Nové vydání vždy k 20. dni v měsíci</h2>
           <h3 class="objednavka__subtitle">Bobobox si můžete objednat jako měsíční předplatné,<br>nebo si ho vyzkoušet či darovat.</h3>
-          <h4 class="objednavka__subtitle">U předplatného si zároveň vyberete, jestli chcete poslat novou krabici každý měsíc, nebo co dva měsíce.</h2>
         </header>
         <main class="objednavka__content">
         <img class="objednavka__content__bobo" src="img/pricing/bobo_corner.png" alt="Bobo">
@@ -320,43 +346,19 @@
             </div>
           </div>
         </div>
+        
+        <aside
+         <figure>
+           <img src="img/split/foto.png" alt="Reference" class="objednavka__reference">
+         </figure>
+        </aside>
+
+        
         </main>
-        <footer class="objednavka__footer">
-          <img class="objednavka__footer__img left-grass" src="img/email/grass_left.png" alt="Tráva">
-          <img class="objednavka__footer__img left-tree" src="img/email/tree_left.png" alt="Strom">
-          <img class="objednavka__footer__img squirrel" src="img/email/squirrel.png" alt="Veverka">
-          <img class="objednavka__footer__img cat-grass" src="img/email/cat_grass.png" alt="Kocour">
-          <img class="objednavka__footer__img right-tree" src="img/email/tree_right.png" alt="Strom">
-          <div class="objednavka__download">
-            <h2 class="objednavka__download__title">Potřebujete kreativní zábavu hned? Žádný problém!</h2>
-            <h5 class="objednavka__download__subtitle">Stáhněte si zdarma šáblony, které si doma vytisknete;)</h5>
-
-            <form method="post" action="https://bobobox.ecomailapp.cz/public/subscribe/2">
-              <input type="email" placeholder="Váš nejlepší email" name="email" required="" class="objednavka__download__input required email">
-              <input type="submit" value="Stáhnout šablonky + novinky" name="subscribe" class="objednavka__download__button">
-            </form>
-
-          </div>
-          <div class="objednavka__inspire">
-            <h2 class="objednavka__inspire__title">Nebo se inspirujte na</h2>
-            <img class="objednavka__inspire__arrow left" src="img/email/arrow.png" alt="Šipka levá">
-            <img class="objednavka__inspire__arrow right" src="img/email/arrow.png" alt="Šipka pravá">
-            <nav class="objednavka__inspire__buttons">
-              <a href="https://facebook.com/bobobox.cz" target="_facebook_bobobox" class="objednavka__inspire__button facebook overlay">
-                <img src="img/email/facebook_icon.png" alt="Facebook">
-                <span class="objednavka__inspire__button__text">Facebook</span>
-              </a>
-              <a href="https://www.youtube.com/channel/UCpHdLCEy47w3wqK4ZuRvnGw" target="_youtube_bobobox" class="objednavka__inspire__button youtube overlay">
-                <img src="img/email/youtube_icon.png" alt="youTube">
-                <span class="objednavka__inspire__button__text">YouTube</span>
-              </a>
-            </nav>
-            <h3 class="objednavka__inspire__subtitle">Najdete tam desítky nápadů a videí na vyrábění s dětmi!</h3>
-          </div>
-        </footer>
+        
       </section>
-      <section class="faqs">
-        <h2 class="faqs__title">Často kladené dotazy</h2>
+      <section id="caste-dotazy" class="faqs">
+        <h2 class="faqs__title">Nejčastější dotazy</h2>
         <div class="faqs__container">
           <div class="faqs__column">
             <div class="faqs__faq">
@@ -416,7 +418,7 @@
            </div>
           </div>
       </section>
-      <section class="kdozatim">
+      <section id="kontakt" class="kdozatim">
         <h2 class="kdozatim__title">Kdo za tím stojí?</h2>
         <h5 class="kdozatim__subtitle">Vyrobeno a navrženo s <span>&hearts;</span> v Brně</h5>
         <div class="kdozatim__avatars">
@@ -454,9 +456,10 @@
           </figure>
           <div class="kdozatim__contact__text">
             <h2 class="kdozatim__phone">739 283 963</h2>
-            <a href="mailto:tom@bobobox.cz">
-              <h2 class="kdozatim__mail">tom@bobobox.cz</h2>
-            </a>
+            
+            <h2 class="kdozatim__mail">
+              <a href="mailto:tom@bobobox.cz">tom@bobobox.cz</a>
+            </h2>
           </div>
           <figure>
             <a href="mailto:tom@bobobox.cz">
