@@ -87,13 +87,13 @@ jQuery(".objednavka__tabs li a").click(function(e) {
 
 var url={
   "1":    "https://bobobox.typeform.com/to/jzBFim",
-  "1_1":  "",
+  "1_1":  "https://bobobox.typeform.com/to/jzBFim",
   "3":    "https://bobobox.typeform.com/to/nc8dsZ",
-  "3_1":  "",      
+  "3_1":  "https://bobobox.typeform.com/to/nc8dsZ",      
   "5":    "https://bobobox.typeform.com/to/tZfzxY",   
-  "5_1":  "",
+  "5_1":  "https://bobobox.typeform.com/to/tZfzxY",
   "10":   "https://bobobox.typeform.com/to/zLxb9D",
-  "10_1": ""
+  "10_1": "https://bobobox.typeform.com/to/zLxb9D"
 };
 
 
@@ -109,9 +109,9 @@ jQuery(".prepocet").click(function(e) {
     var box=5
     if (jQuery("#3boxy").prop('checked')) {box=3;txt='Vybrány 3 boxy';}
     if (jQuery("#5boxu").prop('checked')) {box=5;txt='Vybráno 5 boxů + 1 Zdarma';}
-    if (jQuery("#10boxu").prop('checked')) {box=10;txt='Vybráno 10 boxů + 1 Zdarma + Dárek';}    
+    if (jQuery("#10boxu").prop('checked')) {box=10;txt='Vybráno 10 boxů + 2 Zdarma + Dárek';}    
     if (jQuery("#tab_1-material").prop('checked'))  sourozenec=druhybox; else sourozenec=0;        
-    jQuery(".tab_1 .objednavka__card__summary__1 span").html((cenabox*box)+sourozenec);
+    jQuery(".tab_1 .objednavka__card__summary__1 span").html((cenabox*box)+(sourozenec*box));
     jQuery(".tab_1 .objednavka__card__summary__2").html(txt);
     if (sourozenec!=0) {finurl=box+'_1';} else {finurl=box;}
     jQuery(".tab_1 .button-objednat").attr("href",url[finurl]);
