@@ -107,9 +107,9 @@ jQuery(".prepocet").click(function(e) {
     var cenabox=359;
     var druhybox=129;
     var box=5
-    if (jQuery("#3boxy").prop('checked')) {box=3;txt='Vybrány 3 boxy';}
-    if (jQuery("#5boxu").prop('checked')) {box=5;txt='Vybráno 5 boxů + 1 Zdarma';}
-    if (jQuery("#10boxu").prop('checked')) {box=10;txt='Vybráno 10 boxů + 2 Zdarma + Dárek';}    
+    if (jQuery("#3boxy").prop('checked')) {box=3;txt='Vybrány 3 Boxy';}
+    if (jQuery("#5boxu").prop('checked')) {box=5;txt='Vybráno 5 Boxů + 1 Zdarma';}
+    if (jQuery("#10boxu").prop('checked')) {box=10;txt='Vybráno 10 Boxů + 2 Zdarma + Dárek';}    
     if (jQuery("#tab_1-material").prop('checked'))  sourozenec=druhybox; else sourozenec=0;        
     jQuery(".tab_1 .objednavka__card__summary__1 span").html((cenabox*box)+(sourozenec*box));
     jQuery(".tab_1 .objednavka__card__summary__2").html(txt);
