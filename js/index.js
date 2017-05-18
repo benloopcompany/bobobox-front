@@ -87,13 +87,13 @@ jQuery(".objednavka__tabs li a").click(function(e) {
 
 var url={
   "1":    "https://bobobox.typeform.com/to/jzBFim",
-  "1_1":  "https://bobobox.typeform.com/to/jzBFim",
+  "1_1":  "https://bobobox.typeform.com/to/jzBFim?siblings=Sourozenecky",
   "3":    "https://bobobox.typeform.com/to/nc8dsZ",
-  "3_1":  "https://bobobox.typeform.com/to/nc8dsZ",      
+  "3_1":  "https://bobobox.typeform.com/to/nc8dsZ?siblings=Sourozenecky",      
   "5":    "https://bobobox.typeform.com/to/tZfzxY",   
-  "5_1":  "https://bobobox.typeform.com/to/tZfzxY",
+  "5_1":  "https://bobobox.typeform.com/to/tZfzxY?siblings=Sourozenecky",
   "10":   "https://bobobox.typeform.com/to/zLxb9D",
-  "10_1": "https://bobobox.typeform.com/to/zLxb9D"
+  "10_1": "https://bobobox.typeform.com/to/zLxb9D?siblings=Sourozenecky"
 };
 
 
