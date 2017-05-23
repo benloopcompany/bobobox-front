@@ -11,6 +11,13 @@
 
 @font-face {
     font-family: 'Ubuntu';
+    src: url('../font/ubuntu/Ubuntu-LightItalic.ttf');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
     src: url('../font/ubuntu/ubuntu-regular.ttf');
     font-weight: 400;
 }
@@ -52,10 +59,6 @@ h1, h2, button,
 .button,
 .bubble .title,
 .bubble .subtitle,
-.objednavka__vybrat,
-.objednavka__type__save,
-.objednavka__type__save-per-box,
-.objednavka__type__free,
 .objednavka__download__title,
 .objednavka__download__button,
 .objednavka__inspire__button,
@@ -66,27 +69,26 @@ h1, h2, button,
 .kdozatim__phone,
 .kdozatim__mail {
     font-family: 'Baloo Paaji', cursive;
-    letter-spacing: 1.5pt;
 }
 
 h1, h2 {
     color: white;
+    font-weight: normal;
 }
 
 h3,h4,h5,h6,
 .rozvijime__play-video__text,
 .product-text,
 .jakto__text,
-.objednavka__type__description,
 .objednavka__review__text,
 .page-footer {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 300;
-    letter-spacing: 1.5pt;
+    letter-spacing: 1pt;
 }
 
-.strong {
-    font-weight: 700;
+.strong, .strong *{
+    font-weight: 700 !important;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -101,12 +103,19 @@ h3 {
 section {
     width: 100%;
 }
+.clear{
+    clear: both;
+}
 
 .icon-arrow_down {
     color: #fff;
-    margin: 60% auto;
+    margin: 50% auto;
     cursor: pointer;
     color: rgba(255,255,255,0.3);
+}
+
+.icon-arrow_down:hover{
+    color: rgba(255,255,255,0.8);
 }
 
 .overlay {
@@ -131,16 +140,156 @@ section {
     opacity: 0;
 }
 
-.page-header {
+.page-header {    
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 160px;
     background-color: rgb(92, 195, 245);
+    padding-top: 3em;       
+    margin: 0;
+}
+
+.rozvijime{
+    border-top: 1px solid #5cc3f5;
 }
 
 .page-header__image {
     transform: scale(0.7);
+}
+
+.page-nav{
+    font-family: 'Ubuntu', sans-serif;
+    background: #3ba8d4;
+    position: fixed;
+    top: 0; left: 0;        
+    z-index: 5000;
+    width: 100%;
+    text-align: center;
+    min-width: 600px;    
+    padding: 0.8em 0 1em 0;
+    height: 1.8em;
+}
+
+.page-nav ul{
+    padding: 0; margin: 0;
+}
+
+.page-nav li{
+    display: inline-block;    
+}
+
+.page-nav li a{
+    padding: 0.2em 1.5em 0.2em 3em;
+    display: inline-block;
+    background: url('../img/header/menu_arrow.png') left center no-repeat;
+    font-size: 13pt;
+}
+
+.page-nav li.active a{
+    font-weight: bold;
+}
+
+.page-nav li a:hover{
+    opacity: 0.5;
+}
+
+.page-nav li.first a{
+    background-image: none;
+}
+
+#mobile-menu-btn {
+    width: 30px;
+    padding: 6px 0px;
+    border-top: 6px solid #FFF;
+    border-bottom: 6px solid #FFF;
+    font-size: 0px;
+    line-height: 0;
+    position: absolute;
+    z-index: 11;
+    margin-top: 15px;
+    left: 50%;
+    left: 30px;
+    margin-left: -15px;
+    top: 0;
+    background: transparent url("../img/close.png") no-repeat scroll 0px -999px;
+    background-size: 30px;
+    outline: 0px none;
+    display: none;
+}
+
+#mobile-menu-btn span {
+    display: inline-block;
+    background-color: #FFF;
+    width: 100%;
+    height: 6px;
+    vertical-align: middle;
+}
+
+@media (max-width: 1200px) {
+    #mobile-menu-btn {
+        display: block;
+    }
+    
+    .page-nav.open ul {
+    display: block
+    }
+    
+    .page-nav.open{
+            height: auto;
+            padding-top: 50pt;
+    }
+
+    .page-nav ul {
+        display: none;
+    }
+    
+    .page-nav {
+        text-align: left;
+    }
+
+    .page-nav ul li a{
+      width: 100%;
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+      padding-left: 120px;
+      font-size: 1.7em;
+      background-position: 70px center;
+      border-top: 1px solid #4fb2d9;
+    }
+    
+    .page-nav ul li{
+          display: block;
+          position: relative;
+    }
+    
+    .page-nav li.first a{
+          background-image: url('../img/header/menu_arrow.png');
+    }
+  
+}
+
+#mobile-menu-btn.open span{
+    background: none;
+}
+
+#mobile-menu-btn.open{
+    width: 30px;
+    height: 30px;
+    border: 0px none;
+    padding: 0px;
+    background-position: 0px 0px;
+}
+
+.ukazka{
+    text-align: center;
+    margin: 2em 0 6em 0;
+}
+
+.ukazka a:hover{
+    opacity: 0.8;
 }
 
 @media (max-width: 1200px) {
@@ -157,17 +306,14 @@ section {
     background-color: rgb(92, 195, 245);
     position: relative;
     color: white;
-    min-height: 600px;
-    height: calc(100vh - 160px);
+    min-height: 570px;
+    height: calc(100vh - 160px - 5em);
+    width: 100%;
+    overflow: hidden;
 }
 
-.rozvijime__main {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-bottom: 50px;
-    margin-bottom: 120px;
+.rozvijime__main { 
+    margin-top: 1.5em;
 }
 
 .rozvijime__grass {
@@ -203,13 +349,88 @@ section {
     width: 250px;
     height: 70px;
     transition: all 250ms ease;
+    z-index: 200;
+}
+
+
+.button-recenze,
+.button-video, 
+.button-fotogalerie{
+    text-align: center;
+    background-color: #5ac1f3;
+    display: block;
+    border-radius: 25px;
+    height: 70px;
+    transition: all 250ms ease;
+    z-index: 200;
+    width: 400px;
+    margin: auto;
+    box-shadow: black 4px 4px 10px -6px;
+}
+
+
+.button-video, .button-fotogalerie{
+    float: left;
+    width: 350px;
+    margin-bottom: 30px;
+}
+
+.button-video{
+    background-color: #b52916;
+    margin-left: 25px;
+}
+
+@media (max-width: 800px) {
+    .button-video, .button-fotogalerie{
+        float: none;
+    }
+    .button-video{
+        margin-left: 0;
+    }
+}
+
+.fotogalerie_video{
+    margin-top: 100px;
 }
 
 .rozvijime__header {
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    
     display: flex;
     width: 100%;
     justify-content: space-around;
     align-items: center;
+}
+
+@media (max-height: 860px) {
+    .rozvijime__header__title {
+        padding-top: 0px !important;
+    }
+    
+    .rozvijime__play-video {
+        margin-bottom: 1.5em !important; 
+    }
+    .rozvijime__header {
+        height: 150px;
+        align-items: flex-start;
+        position: relative;
+    }
+    .rozvijime__header__subtitle{
+        font-size: 20pt !important;
+    }
+    .rozvijime__header__title__text{
+        font-size: 32pt !important;
+    } 
+        
+    .page-header__image--box {
+        transform: scale(0.7);
+        height: 150px;
+    }
+    .rozvijime {
+        height: calc(100vh - 185px);
+    }
 }
 
 .rozvijime__header__image {
@@ -228,6 +449,10 @@ section {
     .rozvijime__header__image {
         display: none;
     }
+    
+    .rozvijime__header {
+        height: auto;
+    }
 }
 
 .rozvijime__header__title {
@@ -235,16 +460,16 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0 2em;
     padding-top: 20px;
-    width: 1010px;
 }
 
 .rozvijime__header__subtitle {
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 300;
-    letter-spacing: 1.5pt;
-    font-size: 20pt;
+    letter-spacing: 0;
+    font-size: 23pt;
 }
 
 @media (min-width: 1100px) {
@@ -283,6 +508,7 @@ section {
     align-items: center;
     padding: 0 34px;
     box-shadow: black 4px 4px 10px -6px;
+    margin: auto;
 }
 
 .button-objednat__title {
@@ -293,16 +519,18 @@ section {
 }
 
 .rozvijime__play-video {
-    height: 200px;
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+    margin-bottom: 3em;
 }
 
 .rozvijime__play-video__link {
     text-align: center;
+    opacity: 0.6;
+}
+
+.rozvijime__play-video__link:hover {
+    opacity: 1;
 }
 
 .rozvijime__play-video__text {
@@ -373,33 +601,129 @@ section {
 .prokohoje,
 .prokohoneni,
 .papermagic {
-    background-color: rgb(96, 179, 76);
+    background-color: rgb(247, 114, 6);
     border-bottom: rgb(191, 191, 191) 1px dashed;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 450px;
 }
 
 
 .prokohoneni,
 .papermagic {
-    background-color: white;
+    background: none;
     border-bottom: none;
 }
 
-.prokohoneni {
-    padding-top: 100px;
-    height: 320px;
+.papermagic__logo img{
+  height: 60px;
+  margin-bottom: 3em;
 }
 
-.papermagic {
-    height: 250px;
+
+.prokohoje{
+    padding-top: 80px;
+    padding-bottom: 50px;
 }
+
+.prokohoneni {
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+.papermagic{
+    background: none;
+}
+
+.papermagic figure{
+    margin: 3em 1em;
+}
+
+@media (max-width: 1200px) {
+    .papermagic figure{
+        margin: 1em 1em;
+    }
+}
+
+
+.papermagicbg {
+    background-size: cover;
+    text-align: center;
+    position: relative;
+    padding-top: 50px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.papermagicbg:after {
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('../img/split/wood-texture.jpg') center center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    opacity : 0.4;
+    z-index: -1;
+}
+
+.papermagic__refleft,.papermagic__refright{
+    position: absolute; 
+    top: 60px; 
+    max-width: 402px; 
+}
+
+
+.papermagic__refleft{
+    left: 1%; 
+}
+
+.papermagic__refright{
+    right: 1%; 
+}
+
+@media (max-width: 1500px) {
+    .papermagic__refleft{
+        left: -70px;
+    }
+
+    .papermagic__refright{
+        right: -100px;
+    }
+
+}
+@media (max-width: 1350px) {
+    .papermagic__refleft{
+        left: -70px;
+        width: 25%;
+    }
+
+    .papermagic__refright{
+        width: 25%;
+    }
+
+}
+
+@media (max-width: 1200px) {
+    .papermagic__refleft,.papermagic__refright{
+        top: 50%; 
+        margin-top: -15%;
+        width: 30%;
+    }
+    .papermagic__refleft{
+        left: 10px;
+    }
+    .papermagic__refright{
+        right: 10px;
+    }
+
+}
+
 
 .papermagic figure {
-    min-width: 200px;
     text-align: center;
 }
 
@@ -422,7 +746,7 @@ section {
 }
 
 .prokohoneni .prokohoneni__title {
-    color: orange;
+    color: rgb(247, 114, 6);
 }
 
 .prokohoje .product-title,
@@ -436,13 +760,41 @@ section {
     font-size: 16pt;
 }
 
-.prokohoneni .text-box {
-    margin-right: 180px;
+.text-box{
+    width: 55%;
+    max-width: 750px;
+}
+
+@media (max-width: 1200px) {
+    .text-box{
+        width: 90% !important;
+    }
+}
+
+.prokohoje .product-image{
+    margin-top: 5em;
 }
 
 .prokohoneni a {
     color: black;
     text-decoration: underline;
+}
+
+.prokohoje strong, .prokohoneni strong{
+    font-weight: 400;
+}
+
+.prokohoje .product-text{
+    font-weight: 400;
+}
+
+.prokohoneni .product-text li,.prokohoje .product-text li{
+    margin-bottom: 0.5em;
+}
+
+.prokohoneni .product-text, .prokohoneni .product-text a {
+    color: #707070;
+    font-weight: 400;
 }
 
 @media (max-width: 1200px) {
@@ -463,9 +815,6 @@ section {
         min-width: none;
     }
 
-    .prokohoneni .text-box {
-        margin-right: 0;
-    }
 }
 
 .papermagic figure h3,
@@ -481,6 +830,10 @@ section {
     color: #0995db;
 }
 
+.papermagic .papermagic__views {
+    color: #fc9900;
+}
+
 .papermagic .papermagic__crafts {
     color: #8abf00;
 }
@@ -489,8 +842,11 @@ section {
     color: #ff5247;
 }
 
+.papermagic .papermagic__crafts,.papermagic .papermagic__videos,.papermagic .papermagic__views,.papermagic .papermagic__fans {
+    color: #8abf00;
+}
+
 .papermagic__fb {
-  background: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -498,7 +854,7 @@ section {
   padding-bottom: 100px;
 }
 
-.papermagic__fb h2 {
+.papermagicbg h2 {
   color: rgb(7, 93, 153);
   margin-bottom: 50px;
   font-size: 26pt;
@@ -524,6 +880,7 @@ section {
     background-size: 100% auto;
     background-repeat: no-repeat;
     z-index: -1;
+    left: 0;
 }
 
 @media (max-width: 1000px) {
@@ -547,19 +904,28 @@ section {
 .ficury__title,
 .jakto__title {
     font-size: 40pt;
-    letter-spacing: 2.5pt;
+    letter-spacing: 0;
     margin-top: 80px;
 }
 
 .product-description {
-    border-bottom: rgb(191, 191, 191) 1px dashed;
     background-color: white;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 450px;
+    padding: 1.5em 0;
+    max-width: 1200px;
+    margin: auto;
+    color: #484848;
 }
+
+.product-line{
+    border-bottom: rgb(191, 191, 191) 1px dashed;
+    display: block;
+}
+
 
 .product-description.usetrite {
     border-color: transparent;
@@ -572,13 +938,13 @@ section {
 @media (max-width: 1200px) {
     .product-description {
         flex-direction: column;
-        height: 900px;
     }
 
     .product-description.right .text-box,
     .product-description.left .text-box {
         margin-left: 0;
         margin-right: 0;
+        -webkit-order: 2 !important;
         order: 2 !important;
         margin-top: 50px;
     }
@@ -596,11 +962,48 @@ section {
 }
 
 .product-description.right .text-box {
+    -webkit-order: 2;
     order: 2;
 }
 
 .product-description.left .text-box {
+    -webkit-order: 0;
     order: 0;
+}
+
+.foto_reference{
+    background: #60b34c;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5em;
+}
+
+@media (max-width: 900px) {
+    .foto_reference{
+        padding-top: 5em;
+    }
+}
+
+.objednavka__reference{
+    margin: 5em auto;
+    display: block;
+    width: 90%;
+}
+
+.foto_reference img{
+    width: 90%;
+    margin: auto;
+    display: block;
+}
+
+
+.o_cem__title{
+    font-size: 42pt;
+    text-align: center;
+    color: #3ba8d4;
+    margin: 1em 0 0 0;
 }
 
 .kreativni .text-box {
@@ -612,7 +1015,7 @@ section {
 }
 
 .navody .text-box {
-    margin-left: 60px;
+    margin-left: 20px;
 }
 
 .usetrite .text-box {
@@ -638,6 +1041,7 @@ section {
 }
 
 .product-image {
+    -webkit-order: 1;
     order: 1;
 }
 
@@ -645,7 +1049,7 @@ section {
     font-size: 34pt;
     line-height: 44pt;
     margin-bottom: 45px;
-    max-width: 500px;
+    max-width: 510px;
 }
 
 .kreativni__title {
@@ -685,17 +1089,18 @@ section {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 750px;
 }
 
 .jakto__content {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: 0 5%;
 }
 
 .jakto__text {
     max-width: 480px;
+    line-height: 1.7em;
 }
 
 .jakto__text p {
@@ -713,6 +1118,11 @@ section {
         height: auto;
     }
 
+    .jakto__text {
+        max-width: 600px;
+        width: 80%;
+    }
+
     .jakto__content {
         flex-direction: column;
         justify-content: center;
@@ -721,19 +1131,25 @@ section {
 }
 
 .jakto__title {
-    color: black;
+    color: #5ac1f3;
     margin-bottom: 30px;
 }
 
 .jakto__photo {
-    width: 430px;
     height: 430px;
 }
 
 .jakto__photobox {
-    margin-left: 120px;
+    margin-left: 40px;
     position: relative;
 }
+
+@media (max-width: 1200px) {
+    .jakto__photobox {
+        margin-left: 0px;
+    }
+}
+
 
 .jakto .bubble {
     width: 130px;
@@ -819,8 +1235,7 @@ section {
 }
 
 .objednavka__header {
-    background-color: rgb(194, 79, 79);
-    height: 480px;
+    background-color: #00a139;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -830,13 +1245,19 @@ section {
 
 .objednavka__title {
     font-size: 32pt;
-    margin-top: 90px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.objednavka__title_vydani {
+    font-size: 22pt;
+    margin-top: 0px;
     margin-bottom: 30px;
 }
 
 .objednavka__subtitle {
     font-size: 22pt;
-    font-weight: 500;
+    font-weight: normal;
     letter-spacing: initial;
     color: white;
 }
@@ -847,12 +1268,12 @@ h4.objednavka__subtitle {
     margin-top: 20px;
     color: #ddd;
     font-style: italic;
-    font-weight: normal;
+    font-weight: 300;
 }
 
 .objednavka__content {
-    height: 1220px;
-    background-color: rgb(138, 210, 245);
+    background: url('../img/split/wood-texture.jpg') top center repeat-y;
+    background-size: 100% 2800px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -860,45 +1281,330 @@ h4.objednavka__subtitle {
     position: relative;
 }
 
-.objednavka__content__bobo {
-    position: absolute;
-    top: -240px;
-    left: calc(50% + 360px);
-    transform: scale(0.7);
+.objednavka__shadow{
+    -webkit-filter: drop-shadow(5px 5px 50px rgba(0,0,0,0.5)) drop-shadow(5px 5px 5px rgba(0,0,0,0.5));
+    filter: drop-shadow(5px 5px 50px rgba(0,0,0,0.5)) drop-shadow(5px 5px 5px rgba(0,0,0,0.5));
 }
 
-@media (max-width: 1450px) {
-    .objednavka__content__bobo {
-        display: none;
-    }
+.objednavka__form{
+    max-width: 1200px;  
+}
+
+.objednavka__col1, .objednavka__col2{
+    float: left; 
+    margin-left: -20%;
 }
 
 @media (max-width: 1200px) {
-    .objednavka__content__bobo {
-        display: inline;
-        top: 950px;
-        left: calc(50% - 40px);
+    .objednavka__col1, .objednavka__col2{
+        margin-left: -15%;
     }
+    .objednavka__content {
+        background-size: 100% 100%;
+    }
+
+}
+
+.objednavka__col1{
+    max-width: 881px;
+    width: 100%;   
+    padding-top: 200px;
+    position: relative;
+}
+
+.objednavka__tab_testovano{
+    position: absolute;
+    left: 190px;
+    bottom: 0px;
+}
+
+.objednavka__col2{
+    margin-left: -100%;
+    float: right;
+    width: 501px;
+    max-width: 501px;
+    padding-right: 20px;
+    margin-top: 50px;
 }
 
 @media (max-width: 800px) {
-    .objednavka__content__bobo {
+    .objednavka__col1{
+        display: none;
+    }
+
+    .objednavka__col2{
+        float: none;
+        margin: 50px auto 0 auto;
+    }
+}
+
+.hat1{
+    float: left; 
+    margin-left: 40px;
+}
+.hat2{
+    float: right; 
+    margin-right: 40px;
+}
+
+.tab_1, .tab_2,.tab_3{
+    font-family: 'Ubuntu';
+    font-size: 14pt;
+    background: #fff;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    position: relative; 
+    padding: 20px 30px 60px 30px;
+    text-align: center;
+}
+
+.tab_2, .tab_3{
+    display: none;
+}
+
+
+.objednavka__tabs .overlay {
+    transition: none;    
+}
+
+.objednavka__tabs .overlay:hover:after {
+    content: '\A';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background:rgba(0,0,0,0.15);
+    opacity: 1;
+    transition: none;
+}
+
+.objednavka__tabs .overlay:after {
+    opacity: 0;
+}
+
+.objednavka__card__prani{
+  font-size: 14pt;
+  color: #29abe2;
+  font-weight: 700;
+  position: relative;
+  bottom: 10px;
+  margin-left: 20px;
+}
+
+.objednavka__card__volby{
+    text-align: left;
+    position: relative;
+}
+
+.objednavka__card__novy{
+    font-weight: 700;
+    color: #f77206;
+    font-size: 16pt;
+    letter-spacing: -0.5pt;
+}
+
+.objednavka__card__volby label{
+    display: block;
+    padding-bottom: 10px;
+}
+
+.objednavka__card__price,.objednavka__card__summary__1{
+    color: #000; 
+    font-size: 40pt;
+    font-family: 'Baloo Paaji', cursive;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-bottom: -20px;
+}                    
+
+.objednavka__card__summary__1{
+    font-size: 32pt;
+}
+
+.objednavka__card__summary__2{
+    font-size: 18pt;
+    margin: 20px 0 20px;
+    display: block;
+}
+
+.objednavka__card__obsah{
+    font-size: 18pt;
+    color: #3ba8d4;
+    margin-bottom: 20px;
+}
+
+.objednavka__card__material{
+    font-size: 11pt;
+}
+
+.objednavka__card__delka{
+    font-size: 18pt;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.objednavka__card__obsah__item{
+    width: 50%;
+    float: left;
+    color: #707070;
+    padding: 5px 0;
+}
+
+.objednavka__card__favorite{
+    position: absolute;
+    right: -190px;
+    top: -80px;
+}
+
+@media (max-width: 1350px) {
+    .objednavka__card__favorite{
         display: none;
     }
 }
 
-.objednavka__types {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: -90px;
+.objednavka__tabs {
+    list-style: none;
+    padding: 0;
 }
 
-@media (min-width: 1200px) {
-    .objednavka__type {
-        margin: 0 15px;
-    }
+.objednavka__tabs li{
+    font-family: 'Baloo Paaji', cursive;
+    color: #fff;
+    font-size: 16pt;
+    float: left;
+    width: 167px;
+    text-align: center; 
+}
+
+.objednavka__tabs li a{
+    padding: 16px 20px 8px 20px;
+    display: block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.objednavka__tabs li.active a{
+    background: #fff;
+    color: #000;
+}
+
+.tab-1 a{
+    background: #00a139;
+}
+
+.tab-2 a{
+    background: #3ba8d4;    
+    margin: 0px 10px;
+}
+
+.tab-3 a{
+    background: #dc1673;
+    
+}
+
+.box{
+    background: #00a139;
+    color: #fff;
+    display: inline-block;
+    border-radius: 5px;
+    font-family: 'Baloo Paaji', cursive; 
+    font-size: 13pt;
+    line-height: 1em;
+    padding: 5px 15px 3px 15px;
+    font-weight: normal;
+
+}
+.box.zdarma{
+    background: #00a139;
+}
+
+.box.darek{
+    background: #eb4519;
+}
+
+
+.hr{
+    background: #dedbd4;
+    height: 5px;
+    overflow: hidden;
+    display: block;
+    margin: 20px 0;
+}
+
+input[type="checkbox"] {
+    display:none;
+}
+
+label{
+    cursor:pointer;
+}
+
+input[type="checkbox"] + label > span {
+    display:inline-block;
+    width:31px;
+    height:31px;
+    margin:-2px 10px 0 0;
+    vertical-align:middle;
+    background:url('../img/pricing/component.png') left top no-repeat;
+    cursor:pointer;
+}
+
+input[type="checkbox"]:checked + label > span {
+    background:url('../img/pricing/component.png') -31px top no-repeat;
+}
+
+input[type="radio"] {
+    display:none;
+}
+
+input[type="radio"] + label > span {
+    display:inline-block;
+    width:31px;
+    height:31px;
+    margin:-2px 10px 0 0;
+    vertical-align:middle;
+    background:url('../img/pricing/component.png') -62px top no-repeat;
+    cursor:pointer;
+}
+
+input[type="radio"]:checked + label > span {
+    background:url('../img/pricing/component.png') -93px top no-repeat;
+}
+
+.objednavka__predplatne__ic_aktivit, 
+.objednavka__predplatne__ic_lepidlo, 
+.objednavka__predplatne__ic_navody, 
+.objednavka__predplatne__ic_material{
+    display: inline-block;
+    width: 40px; 
+    height: 40px;
+    line-height: 40px;
+    margin-right: 10px;
+} 
+
+.objednavka__predplatne__ic_aktivit{
+    background: #ec6363; 
+    border-radius: 100%; 
+    color: #fff;  
+    text-align: center;
+    font-family: 'Baloo Paaji', cursive; 
+    font-size: 22pt;
+}
+
+.objednavka__predplatne__ic_material{
+    background: url('../img/pricing/ico-material.png')
+}
+
+.objednavka__predplatne__ic_navody{
+    background: url('../img/pricing/ico-pribeh.png')
+}
+
+.objednavka__predplatne__ic_lepidlo{
+    background: url('../img/pricing/ico-lepidlo.png')
 }
 
 @media (max-width: 1200px) {
@@ -906,104 +1612,6 @@ h4.objednavka__subtitle {
         height: auto;
     }
 
-    .objednavka__types {
-        margin-top: -180px;
-        flex-direction: column;
-    }
-
-    .objednavka__type {
-        margin-top: 100px;
-        margin-bottom: 50px;
-    }
-}
-
-.objednavka__type {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: white;
-    width: 370px;
-    height: 440px;
-    border-radius: 40px;
-    text-align: center;
-}
-
-.objednavka__type__title,
-.objednavka__type__price {
-    color: black;
-}
-
-.objednavka__type__title {
-    margin-top: 40px;
-    font-size: 20pt;
-    line-height: 24pt;
-}
-
-.objednavka__type__image {
-    transform: scale(0.8);
-}
-
-.objednavka__type__price {
-    font-size: 30pt;
-    line-height: 30pt;
-}
-
-.objednavka__vybrat {
-    width: 240px;
-    height: 70px;
-    position: absolute;
-    bottom: -40px;
-    border-radius: 30px;
-    background-color: rgb(247,114,6);
-    color: white;
-    box-shadow: black 4px 4px 10px -6px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    letter-spacing: initial;
-    font-size: 26pt;
-    transition: all 250ms ease;
-}
-
-.objednavka__vybrat.light {
-    height: 62px;
-    color: rgb(247,114,6);
-    background-color: white;
-    border: 4px solid rgb(247,114,6);
-}
-
-.objednavka__type__description {
-    letter-spacing: initial;
-    font-weight: 400;
-    margin-top: 40px;
-}
-
-.objednavka__type__save {
-    letter-spacing: initial;
-    font-size: 16pt;
-    color: rgb(194, 79, 79);
-}
-
-.objednavka__type__save-per-box {
-    letter-spacing: initial;
-    font-size: 18pt;
-    margin-top: 20px;
-}
-
-.objednavka__type__free,
-.objednavka__type__save-per-box .green {
-    color: rgb(0, 161, 57);
-}
-
-.objednavka__type__free {
-    position: absolute;
-    top: 190px;
-    right: 64px;
-    letter-spacing: initial;
-    font-size: 14pt;
 }
 
 .objednavka__recomend {
@@ -1012,40 +1620,49 @@ h4.objednavka__subtitle {
 
 .objednavka__inspire__title,
 .objednavka__recomend__title {
-    margin-top: 140px;
+    margin-top: 60px;
     font-size: 30pt;
     margin-bottom: 60px;
 }
+.objednavka__recomend__title {
+    color: #000;
+}   
 
-.objednavka__reviews {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
 
 @media (max-width: 1200px) {
   .objednavka__recomend__title {
       margin-top: 70px;
   }
 
-  .objednavka__reviews {
-      flex-direction: column;
-  }
-
   .objednavka__reviews .objednavka__review {
-      margin: 30px 15px;
+      margin: 30px auto 50px auto;
   }
+}
+
+.objednavka__reviews{
+    max-width: 1200px;
 }
 
 .objednavka__review {
     width: 370px;
-    height: 250px;
-    border: rgb(191, 191, 191) 2px dashed;
+    height: 260px;
     border-radius: 30px;
     background-color: white;
-    margin: 0 15px;
+    margin: 0 10px;
     position: relative;
+    float: left;
+    margin-bottom: 70px;
+}
+
+@media (max-width: 1200px) {
+    .objednavka__review{
+        float: none;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+        height: auto;
+    } 
 }
 
 .objednavka__review__text {
@@ -1056,13 +1673,14 @@ h4.objednavka__subtitle {
 }
 
 .objednavka__review__check {
-    width: 40px;
-    height: 40px;
+    width: 68px;
+    height: 68px;
     background-repeat: no-repeat;
     background-image: url('../img/pricing/check.png');
     position: absolute;
-    top: -20px;
-    left: calc(50% - 20px);
+    top: -34px;
+    left: 50%;
+    margin-left: -34px;
 }
 
 .objednavka__footer {
@@ -1175,9 +1793,9 @@ h4.objednavka__subtitle {
     width: 300px;
     height: 76px;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;         
+    justify-content: center;     
+    align-items: center;    
     color: white;
     border-radius: 30px;
     letter-spacing: initial;
@@ -1331,6 +1949,11 @@ h4.objednavka__subtitle {
     background-color: white;
 }
 
+.faqs__column a{
+    text-decoration: underline;
+    color: #000;
+}
+
 @media (max-width: 1200px) {
     .faqs__container {
         flex-direction: column;
@@ -1346,17 +1969,20 @@ h4.objednavka__subtitle {
 }
 
 .faqs__faq--title {
-    font-size: 14pt;
-    font-family: 'Arial', sans-serif;
+    font-size: 18pt;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
-    color: rgb(59, 168, 212);
-    letter-spacing: .8pt;
+    color: #000;
+    letter-spacing: 0pt;
 }
 
 .faqs p {
     padding-bottom: 20px;
-    font-family: 'Verdana', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     line-height: 1.3em;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 14pt;
 }
 
 .kdozatim {
@@ -1384,7 +2010,7 @@ h4.objednavka__subtitle {
 }
 
 .kdozatim__subtitle span {
-    color: red;
+    font-size: 1.5em;
 }
 
 .kdozatim__avatars {
@@ -1460,8 +2086,9 @@ h4.objednavka__subtitle {
     transform: scaleX(-1);
 }
 
-.kdozatim__phone,
-.kdozatim__mail {
+.kdozatim__phone, 
+.kdozatim__phone a,
+.kdozatim__mail a {
     color: black;
 }
 
@@ -1499,4 +2126,58 @@ h4.objednavka__subtitle {
 
 .page-content {
     overflow: hidden;
+    /*position: absolute;*/
+}                  
+
+#typeform{
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: 5000; 
+    width: 80%; 
+    height: 75%;
+    min-width: 480px;
+    margin: 10%; 
+}
+
+#typeform::before{
+    content: 'fds';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.6;
+    z-index: -1;
+    margin: -10%;    
+}
+
+#typeform iframe{
+    width: 100%; 
+    height: 100%; 
+    border: 0;
+}
+
+#typeform .content{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: #fff;
+}
+
+#typeform .close{
+    display: block;
+    position: absolute;
+    top: -30px; right: 0px;
+    width: 24px;
+    height: 24px;
+    background: #000;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: url(../img/close.png) no-repeat;
+    background-size: 24px 24px;
+    -webkit-background-size: 24px 24px;
+    -moz-background-size: 24px 24px;
+    -o-background-size: 24px 24px;
 }
