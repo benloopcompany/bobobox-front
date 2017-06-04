@@ -16,23 +16,23 @@ jQuery(function(){
   jQuery("a.objednavka__vybrat, a.button-objednat").click(function(e) {
     fbq('trackCustom', 'OrderFormClick');
   });
-  
+
   jQuery('#mobile-menu-btn').click(function() {
-    if (jQuery( "#mobile-menu-btn" ).hasClass( "open" )){  
+    if (jQuery( "#mobile-menu-btn" ).hasClass( "open" )){
       jQuery( "#mobile-menu-btn" ).removeClass("open");
       jQuery( ".page-nav" ).removeClass("open");
     } else {
       jQuery( "#mobile-menu-btn" ).addClass("open");
       jQuery( ".page-nav" ).addClass("open");
-      }      
+      }
   });
-  
+
   jQuery('.page-nav ul a').click(function() {
       jQuery( "#mobile-menu-btn" ).removeClass("open");
       jQuery( ".page-nav" ).removeClass("open");
   });
-           
-  
+
+
 });
 
 var rellax = new Rellax('.ficury__background');
@@ -62,20 +62,20 @@ jQuery(window).scroll(function(){
 
    cur = cur[cur.length-1];
    var id = cur && cur.length ? cur[0].id : "";
-   
+
    if (lastId !== id) {
        lastId = id;
        menuItems
          .parent().removeClass("active")
          .end().filter("[href='#"+id+"']").parent().addClass("active");
-   }                   
+   }
 });
 
 // taby
 jQuery(".objednavka__tabs li a").click(function(e) {
   jQuery(".objednavka__tabs li").removeClass("active");
   jQuery(this).parent().addClass('active');
-  
+
   jQuery(".tab_1, .tab_2, .tab_3").hide();
   var tt=jQuery(this).parent().attr("id");
   /*jQuery("#objednavka__tab_img").prop("src","img/pricing/box_"+tt+".png");*/
@@ -89,8 +89,8 @@ var url={
   "1":    "https://bobobox.typeform.com/to/jzBFim",
   "1_1":  "https://bobobox.typeform.com/to/jzBFim?siblings=Sourozenecky",
   "3":    "https://bobobox.typeform.com/to/nc8dsZ",
-  "3_1":  "https://bobobox.typeform.com/to/nc8dsZ?siblings=Sourozenecky",      
-  "5":    "https://bobobox.typeform.com/to/tZfzxY",   
+  "3_1":  "https://bobobox.typeform.com/to/nc8dsZ?siblings=Sourozenecky",
+  "5":    "https://bobobox.typeform.com/to/tZfzxY",
   "5_1":  "https://bobobox.typeform.com/to/tZfzxY?siblings=Sourozenecky",
   "10":   "https://bobobox.typeform.com/to/zLxb9D",
   "10_1": "https://bobobox.typeform.com/to/zLxb9D?siblings=Sourozenecky"
@@ -109,13 +109,13 @@ jQuery(".prepocet").click(function(e) {
     var box=5
     if (jQuery("#3boxy").prop('checked')) {box=3;txt='Vybrány 3 Boxy';}
     if (jQuery("#5boxu").prop('checked')) {box=5;txt='Vybráno 5 Boxů + 1 Zdarma';}
-    if (jQuery("#10boxu").prop('checked')) {box=10;txt='Vybráno 10 Boxů + 2 Zdarma + Dárek';}    
-    if (jQuery("#tab_1-material").prop('checked'))  sourozenec=druhybox; else sourozenec=0;        
+    if (jQuery("#10boxu").prop('checked')) {box=10;txt='Vybráno 10 Boxů + 2 Zdarma + Dárek';}
+    if (jQuery("#tab_1-material").prop('checked'))  sourozenec=druhybox; else sourozenec=0;
     jQuery(".tab_1 .objednavka__card__summary__1 span").html((cenabox*box)+(sourozenec*box));
     jQuery(".tab_1 .objednavka__card__summary__2").html(txt);
     if (sourozenec!=0) {finurl=box+'_1';} else {finurl=box;}
     jQuery(".tab_1 .button-objednat").attr("href",url[finurl]);
-    
+
   } else if (aktivnitab=='tab_2'){
     var cenabox=429;
     var druhybox=129;
@@ -124,17 +124,17 @@ jQuery(".prepocet").click(function(e) {
     jQuery(".tab_2 .objednavka__card__summary__1 span").html(cenabox+sourozenec);
     if (sourozenec!=0) {finurl=box+'_1';} else {finurl=box;}
     jQuery(".tab_2 .button-objednat").prop("href",url[finurl]);
-    
+
   } else if (aktivnitab=='tab_3'){
-  
+
   }
-     
+
 });
 
 /* typeform přepracování */
 jQuery(".button-objednat").click(function(e){
   $( "body" ).append('<div id="typeform"><div class="content"><a href="javascript: return false;" class="close" onclick="jQuery(\'#typeform\').remove();"></a><iframe src=""></iframe></div></div>');
   jQuery("#typeform iframe").prop("src",jQuery(this).prop("href"));
-  return false;  
+  return false;
 });
 

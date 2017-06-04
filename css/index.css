@@ -140,7 +140,7 @@ section {
     opacity: 0;
 }
 
-.page-header {    
+.page-header {
     display: -webkit-box;
     -webkit-box-pack: center;
     -webkit-box-align: center;
@@ -148,7 +148,7 @@ section {
     justify-content: space-around;
     align-items: center;
     background-color: rgb(92, 195, 245);
-    padding-top: 3em;       
+    padding-top: 3em;
     margin: 0;
 }
 
@@ -164,11 +164,11 @@ section {
     font-family: 'Ubuntu', sans-serif;
     background: #3ba8d4;
     position: fixed;
-    top: 0; left: 0;        
+    top: 0; left: 0;
     z-index: 5000;
     width: 100%;
     text-align: center;
-    min-width: 600px;    
+    min-width: 600px;
     padding: 0.8em 0 1em 0;
     height: 1.8em;
 }
@@ -178,7 +178,7 @@ section {
 }
 
 .page-nav li{
-    display: inline-block;    
+    display: inline-block;
 }
 
 .page-nav li a{
@@ -232,11 +232,11 @@ section {
     #mobile-menu-btn {
         display: block;
     }
-    
+
     .page-nav.open ul {
     display: block
     }
-    
+
     .page-nav.open{
             height: auto;
             padding-top: 50pt;
@@ -245,7 +245,7 @@ section {
     .page-nav ul {
         display: none;
     }
-    
+
     .page-nav {
         text-align: left;
     }
@@ -259,16 +259,16 @@ section {
       background-position: 70px center;
       border-top: 1px solid #4fb2d9;
     }
-    
+
     .page-nav ul li{
           display: block;
           position: relative;
     }
-    
+
     .page-nav li.first a{
           background-image: url('../img/header/menu_arrow.png');
     }
-  
+
 }
 
 #mobile-menu-btn.open span{
@@ -312,7 +312,7 @@ section {
     overflow: hidden;
 }
 
-.rozvijime__main { 
+.rozvijime__main {
     margin-top: 1.5em;
 }
 
@@ -354,7 +354,7 @@ section {
 
 
 .button-recenze,
-.button-video, 
+.button-video,
 .button-fotogalerie{
     text-align: center;
     background-color: #5ac1f3;
@@ -397,7 +397,7 @@ section {
     display: -webkit-box;
     -webkit-box-pack: center;
     -webkit-box-align: center;
-    
+
     display: flex;
     width: 100%;
     justify-content: space-around;
@@ -408,9 +408,9 @@ section {
     .rozvijime__header__title {
         padding-top: 0px !important;
     }
-    
+
     .rozvijime__play-video {
-        margin-bottom: 1.5em !important; 
+        margin-bottom: 1.5em !important;
     }
     .rozvijime__header {
         height: 150px;
@@ -422,8 +422,8 @@ section {
     }
     .rozvijime__header__title__text{
         font-size: 32pt !important;
-    } 
-        
+    }
+
     .page-header__image--box {
         transform: scale(0.7);
         height: 150px;
@@ -449,7 +449,7 @@ section {
     .rozvijime__header__image {
         display: none;
     }
-    
+
     .rozvijime__header {
         height: auto;
     }
@@ -671,18 +671,18 @@ section {
 }
 
 .papermagic__refleft,.papermagic__refright{
-    position: absolute; 
-    top: 60px; 
-    max-width: 402px; 
+    position: absolute;
+    top: 60px;
+    max-width: 402px;
 }
 
 
 .papermagic__refleft{
-    left: 1%; 
+    left: 1%;
 }
 
 .papermagic__refright{
-    right: 1%; 
+    right: 1%;
 }
 
 @media (max-width: 1500px) {
@@ -709,7 +709,7 @@ section {
 
 @media (max-width: 1200px) {
     .papermagic__refleft,.papermagic__refright{
-        top: 50%; 
+        top: 50%;
         margin-top: -15%;
         width: 30%;
     }
@@ -1287,11 +1287,11 @@ h4.objednavka__subtitle {
 }
 
 .objednavka__form{
-    max-width: 1200px;  
+    max-width: 1200px;
 }
 
 .objednavka__col1, .objednavka__col2{
-    float: left; 
+    float: left;
     margin-left: -20%;
 }
 
@@ -1307,7 +1307,7 @@ h4.objednavka__subtitle {
 
 .objednavka__col1{
     max-width: 881px;
-    width: 100%;   
+    width: 100%;
     padding-top: 200px;
     position: relative;
 }
@@ -1339,11 +1339,11 @@ h4.objednavka__subtitle {
 }
 
 .hat1{
-    float: left; 
+    float: left;
     margin-left: 40px;
 }
 .hat2{
-    float: right; 
+    float: right;
     margin-right: 40px;
 }
 
@@ -1353,8 +1353,8 @@ h4.objednavka__subtitle {
     background: #fff;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
-    position: relative; 
-    padding: 20px 30px 60px 30px;
+    position: relative;
+    padding: 20px 30px 125px 30px;
     text-align: center;
 }
 
@@ -1364,7 +1364,7 @@ h4.objednavka__subtitle {
 
 
 .objednavka__tabs .overlay {
-    transition: none;    
+    transition: none;
 }
 
 .objednavka__tabs .overlay:hover:after {
@@ -1405,6 +1405,7 @@ h4.objednavka__subtitle {
     color: #f77206;
     font-size: 16pt;
     letter-spacing: -0.5pt;
+    margin-top: 10px;
 }
 
 .objednavka__card__volby label{
@@ -1412,26 +1413,26 @@ h4.objednavka__subtitle {
     padding-bottom: 10px;
 }
 
-.objednavka__card__price,.objednavka__card__summary__1{
-    color: #000; 
+.objednavka__card__price,.objednavka__card__summary__1 {
+    color: #000;
     font-size: 40pt;
     font-family: 'Baloo Paaji', cursive;
     letter-spacing: 0;
     line-height: normal;
     margin-bottom: -20px;
-}                    
+}
 
-.objednavka__card__summary__1{
+.objednavka__card__summary__1 {
     font-size: 32pt;
 }
 
-.objednavka__card__summary__2{
+.objednavka__card__summary__2 {
     font-size: 18pt;
     margin: 20px 0 20px;
     display: block;
 }
 
-.objednavka__card__obsah{
+.objednavka__card__obsah {
     font-size: 18pt;
     color: #3ba8d4;
     margin-bottom: 20px;
@@ -1447,12 +1448,18 @@ h4.objednavka__subtitle {
     margin-bottom: 20px;
 }
 
-.objednavka__card__obsah__item{
+.objednavka__card__benefits__item {
+    width: 100%;
+    padding: 5px 0;
+    text-align: left;
+}
+
+.objednavka__card__obsah__item {
     width: 50%;
     float: left;
     color: #707070;
     padding: 5px 0;
-}
+ }
 
 .objednavka__card__favorite{
     position: absolute;
@@ -1477,7 +1484,7 @@ h4.objednavka__subtitle {
     font-size: 16pt;
     float: left;
     width: 167px;
-    text-align: center; 
+    text-align: center;
 }
 
 .objednavka__tabs li a{
@@ -1497,13 +1504,13 @@ h4.objednavka__subtitle {
 }
 
 .tab-2 a{
-    background: #3ba8d4;    
+    background: #3ba8d4;
     margin: 0px 10px;
 }
 
 .tab-3 a{
     background: #dc1673;
-    
+
 }
 
 .box{
@@ -1511,7 +1518,7 @@ h4.objednavka__subtitle {
     color: #fff;
     display: inline-block;
     border-radius: 5px;
-    font-family: 'Baloo Paaji', cursive; 
+    font-family: 'Baloo Paaji', cursive;
     font-size: 13pt;
     line-height: 1em;
     padding: 5px 15px 3px 15px;
@@ -1532,7 +1539,7 @@ h4.objednavka__subtitle {
     height: 5px;
     overflow: hidden;
     display: block;
-    margin: 20px 0;
+    margin: 17px 0;
 }
 
 input[type="checkbox"] {
@@ -1575,36 +1582,58 @@ input[type="radio"]:checked + label > span {
     background:url('../img/pricing/component.png') -93px top no-repeat;
 }
 
-.objednavka__predplatne__ic_aktivit, 
-.objednavka__predplatne__ic_lepidlo, 
-.objednavka__predplatne__ic_navody, 
-.objednavka__predplatne__ic_material{
+.objednavka__predplatne__ic_aktivit,
+.objednavka__predplatne__ic_lepidlo,
+.objednavka__predplatne__ic_navody,
+.objednavka__predplatne__ic_material {
     display: inline-block;
-    width: 40px; 
+    width: 40px;
     height: 40px;
     line-height: 40px;
     margin-right: 10px;
-} 
+}
 
-.objednavka__predplatne__ic_aktivit{
-    background: #ec6363; 
-    border-radius: 100%; 
-    color: #fff;  
+.objednavka__predplatne__ic_aktivit {
+    background: #ec6363;
+    border-radius: 100%;
+    color: #fff;
     text-align: center;
-    font-family: 'Baloo Paaji', cursive; 
+    font-family: 'Baloo Paaji', cursive;
     font-size: 22pt;
 }
 
-.objednavka__predplatne__ic_material{
-    background: url('../img/pricing/ico-material.png')
+.objednavka__predplatne__ic_material {
+    background: url('../img/pricing/ico-material.png') 0 0 no-repeat;
 }
 
-.objednavka__predplatne__ic_navody{
-    background: url('../img/pricing/ico-pribeh.png')
+.objednavka__predplatne__ic_navody {
+    background: url('../img/pricing/ico-pribeh.png') 0 0 no-repeat;
 }
 
-.objednavka__predplatne__ic_lepidlo{
-    background: url('../img/pricing/ico-lepidlo.png')
+.objednavka__predplatne__ic_lepidlo {
+    background: url('../img/pricing/ico-lepidlo.png') 0 0 no-repeat;
+}
+
+.objednavka__predplatne__ic_zabava,
+.objednavka__predplatne__ic_miluji,
+.objednavka__predplatne__ic_nemusite {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 10px;
+}
+
+.objednavka__predplatne__ic_zabava {
+    background: url('../img/pricing/kid_icon.png') 0 0 no-repeat;
+}
+
+.objednavka__predplatne__ic_miluji {
+    background: url('../img/pricing/heart_icon.png') 0 0 no-repeat;
+}
+
+.objednavka__predplatne__ic_nemusite {
+    background: url('../img/pricing/parent_icon.png') 0 0 no-repeat;
 }
 
 @media (max-width: 1200px) {
@@ -1626,7 +1655,7 @@ input[type="radio"]:checked + label > span {
 }
 .objednavka__recomend__title {
     color: #000;
-}   
+}
 
 
 @media (max-width: 1200px) {
@@ -1662,7 +1691,7 @@ input[type="radio"]:checked + label > span {
         margin-right: auto;
         width: 70%;
         height: auto;
-    } 
+    }
 }
 
 .objednavka__review__text {
@@ -1793,9 +1822,9 @@ input[type="radio"]:checked + label > span {
     width: 300px;
     height: 76px;
     display: flex;
-    flex-direction: row;         
-    justify-content: center;     
-    align-items: center;    
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     color: white;
     border-radius: 30px;
     letter-spacing: initial;
@@ -2086,7 +2115,7 @@ input[type="radio"]:checked + label > span {
     transform: scaleX(-1);
 }
 
-.kdozatim__phone, 
+.kdozatim__phone,
 .kdozatim__phone a,
 .kdozatim__mail a {
     color: black;
@@ -2127,17 +2156,17 @@ input[type="radio"]:checked + label > span {
 .page-content {
     overflow: hidden;
     /*position: absolute;*/
-}                  
+}
 
 #typeform{
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    z-index: 5000; 
-    width: 80%; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5000;
+    width: 80%;
     height: 75%;
     min-width: 480px;
-    margin: 10%; 
+    margin: 10%;
 }
 
 #typeform::before{
@@ -2148,12 +2177,12 @@ input[type="radio"]:checked + label > span {
     background: #000;
     opacity: 0.6;
     z-index: -1;
-    margin: -10%;    
+    margin: -10%;
 }
 
 #typeform iframe{
-    width: 100%; 
-    height: 100%; 
+    width: 100%;
+    height: 100%;
     border: 0;
 }
 
