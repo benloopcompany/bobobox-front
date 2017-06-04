@@ -1358,8 +1358,9 @@ h4.objednavka__subtitle {
     text-align: center;
 }
 
-.tab_2, .tab_3{
+.tab_2, .tab_3 {
     display: none;
+    padding: 20px 30px 40px 30px;
 }
 
 
@@ -1435,7 +1436,7 @@ h4.objednavka__subtitle {
 .objednavka__card__obsah {
     font-size: 18pt;
     color: #3ba8d4;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 .objednavka__card__material{
