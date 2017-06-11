@@ -1312,10 +1312,48 @@ h4.objednavka__subtitle {
     position: relative;
 }
 
-.objednavka__tab_testovano{
+.objednavka__tab_testovano {
     position: absolute;
     left: 190px;
     bottom: 0px;
+}
+
+.objednavka__tab_garance_open {
+    position: absolute;
+    left: 390px;
+    bottom: 50px;
+}
+
+#objednavka__tab_garance {
+    background: #fff;
+    padding: 10px 40px 40px 40px;
+    border-radius: 10px;
+}
+
+#objednavka__tab_garance h2 {
+    color: rgb(59, 168, 212);
+}
+
+#objednavka__tab_garance .garance__content img {
+    float: left;
+    padding-right: 20px;
+}
+
+#objednavka__tab_garance .garance__content div {
+    float: left;
+    width: 450px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: sans-serif;
+}
+
+#objednavka__tab_garance .garance__content div p:first-child {
+    margin-top: 0;
+}
+
+#objednavka__tab_garance .garance__content div p {
+    line-height: 1.8em;
+    margin-bottom: 30px;
 }
 
 .objednavka__col2{
