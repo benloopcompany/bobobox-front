@@ -1322,6 +1322,7 @@ h4.objednavka__subtitle {
     position: absolute;
     left: 390px;
     bottom: 50px;
+    cursor: pointer;
 }
 
 #objednavka__tab_garance {
