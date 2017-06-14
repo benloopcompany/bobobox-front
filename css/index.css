@@ -1318,29 +1318,29 @@ h4.objednavka__subtitle {
     bottom: 0px;
 }
 
-.objednavka__tab_garance_open {
+.objednavka__tab_garance {
     position: absolute;
     left: 390px;
     bottom: 50px;
     cursor: pointer;
 }
 
-#objednavka__tab_garance {
+#garance {
     background: #fff;
     padding: 10px 40px 40px 40px;
     border-radius: 10px;
 }
 
-#objednavka__tab_garance h2 {
+#garance h2 {
     color: rgb(59, 168, 212);
 }
 
-#objednavka__tab_garance .garance__content img {
+#garance .garance__content img {
     float: left;
     padding-right: 20px;
 }
 
-#objednavka__tab_garance .garance__content div {
+#garance .garance__content div {
     float: left;
     width: 450px;
     padding-left: 20px;
@@ -1348,13 +1348,18 @@ h4.objednavka__subtitle {
     font-family: sans-serif;
 }
 
-#objednavka__tab_garance .garance__content div p:first-child {
+#garance .garance__content div p:first-child {
     margin-top: 0;
 }
 
-#objednavka__tab_garance .garance__content div p {
+#garance .garance__content div p {
     line-height: 1.8em;
     margin-bottom: 30px;
+}
+
+#garance .garance__content div a {
+    color: rgb(59, 168, 212);
+    text-decoration: underline;
 }
 
 .objednavka__col2{
@@ -1470,6 +1475,22 @@ h4.objednavka__subtitle {
     font-size: 18pt;
     margin: 20px 0 20px;
     display: block;
+}
+
+.objednavka__card__garance {
+    font-size: 12pt;
+    margin-bottom: 20px;
+}
+
+.objednavka__card__garance a {
+    color: #3ba8d4;
+    cursor: pointer;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.objednavka__card__garance a:hover {
+    text-decoration: underline;
 }
 
 .objednavka__card__obsah {

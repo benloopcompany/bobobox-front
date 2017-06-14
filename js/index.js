@@ -32,7 +32,7 @@ jQuery(function(){
     jQuery( ".page-nav" ).removeClass("open");
   });
 
-  $('#objednavka__tab_garance').popup({
+  $('#garance').popup({
     transition: 'all 0.3s',
     scrolllock: true
   });
