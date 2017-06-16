@@ -1677,7 +1677,8 @@ input[type="radio"]:checked + label > span {
 
 .objednavka__predplatne__ic_zabava,
 .objednavka__predplatne__ic_miluji,
-.objednavka__predplatne__ic_nemusite {
+.objednavka__predplatne__ic_nemusite,
+.objednavka__predplatne__ic_preskoc {
     display: inline-block;
     width: 30px;
     height: 30px;
@@ -1686,15 +1687,24 @@ input[type="radio"]:checked + label > span {
 }
 
 .objednavka__predplatne__ic_zabava {
-    background: url('../img/pricing/kid_icon.png') 0 0 no-repeat;
+    background: url('../img/pricing/kid_icon.png') 50% 50% no-repeat;
 }
 
 .objednavka__predplatne__ic_miluji {
-    background: url('../img/pricing/heart_icon.png') 0 0 no-repeat;
+    background: url('../img/pricing/heart_icon.png') 50% 50% no-repeat;
 }
 
 .objednavka__predplatne__ic_nemusite {
-    background: url('../img/pricing/parent_icon.png') 0 0 no-repeat;
+    background: url('../img/pricing/parent_icon.png') 50% 50% no-repeat;
+}
+
+.objednavka__predplatne__ic_preskoc {
+    background: url('../img/pricing/calendar.png') 50% 50% no-repeat;
+}
+
+.objednavka__card__benefits__item a {
+    color: #333;
+    text-decoration: underline;
 }
 
 @media (max-width: 1200px) {
