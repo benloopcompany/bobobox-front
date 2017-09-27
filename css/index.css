@@ -91,6 +91,10 @@ h3,h4,h5,h6,
     font-weight: 700 !important;
 }
 
+.non-italic {
+    font-style: normal;
+}
+
 h1,h2,h3,h4,h5,h6 {
     margin: 0;
 }
@@ -1678,7 +1682,8 @@ input[type="radio"]:checked + label > span {
 .objednavka__predplatne__ic_zabava,
 .objednavka__predplatne__ic_miluji,
 .objednavka__predplatne__ic_nemusite,
-.objednavka__predplatne__ic_preskoc {
+.objednavka__predplatne__ic_preskoc,
+.objednavka__predplatne__ic_gratulation {
     display: inline-block;
     width: 30px;
     height: 30px;
@@ -1700,6 +1705,11 @@ input[type="radio"]:checked + label > span {
 
 .objednavka__predplatne__ic_preskoc {
     background: url('../img/pricing/calendar.png') 50% 50% no-repeat;
+}
+
+.objednavka__predplatne__ic_gratulation {
+    background: url('../img/pricing/hat-2.png') 50% 50% no-repeat;
+    background-size: 50%;
 }
 
 .objednavka__card__benefits__item a {
