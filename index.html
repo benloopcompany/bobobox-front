@@ -6,6 +6,7 @@
     <title>Bobobox - Výtvarná krabice pro děti od 4-8 let.</title>
 
     <link href="css/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="node_modules/magnific-popup/dist/magnific-popup.css">
     <link href="css/index.css" rel="stylesheet">
     <link href="css/youtube_popup.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -37,23 +38,20 @@
         <a href="javascript:void(0);" id="mobile-menu-btn"><span>&nbsp;</span></a>
       </nav>
 
-      <header class="page-header">
-        <img class="page-header__image page-header__image--cloud" src="img/header/cloud_left.png" alt="Levý mráček">
-        <img class="page-header__image page-header__image--box"src="img/header/bobobox.png" alt="Bobobox Logo">
-        <img class="page-header__image page-header__image--cloud" src="img/header/cloud_right.png" alt="Pravý mráček">
-      </header>
       <section class="rozvijime">
         <header class="rozvijime__header">
           <figure class="rozvijime__header__image">
-            <img src="img/header/balon.png" alt="Létající balón">
+            <img class="rozvijime__header__image--cloud" src="img/header/cloud_left.png" alt="Levý mráček">
+            <img class="rozvijime__header__image--baloon" src="img/header/balon.png" alt="Létající balón">
           </figure>
           <div class="rozvijime__header__title">
-            <h2 class="rozvijime__header__title__text">Formujeme budoucí tvůrce a kreativce</h2>
-            <h1 class="rozvijime__header__subtitle">Bobobox je <span class="strong">výtvarná krabice ukrývající příběh.</span><br class="rozvijime__header__subtitle__break"> Ideální pro děti od čtyř do osmi let. Koupit Bobobox můžete jednorázově, nebo formou měsíčního předplatného. Třeba i jako skvělý dárek.
+            <h2 class="rozvijime__header__title__text">Výtvarná krabice pro kreativní děti<br class="rozvijime__header__title__break"> a zaneprázdněné rodiče.</h2>
+            <h1 class="rozvijime__header__subtitle">Funguje formou měsíčního předplatného nebo jako skvělý dárek.<br class="rozvijime__header__subtitle__break"> Ideální pro děti od čtyř do osmi let.
             </h1>
           </div>
-          <figure class="rozvijime__header__image rozvijime__header__image--rocket">
-            <img src="img/header/raketa.png" alt="Raketa">
+          <figure class="rozvijime__header__image">
+            <img class="rozvijime__header__image--cloud" src="img/header/cloud_right.png" alt="Pravý mráček">
+            <img class="rozvijime__header__image--rocket" src="img/header/raketa.png" alt="Raketa">
           </figure>
         </header>
         <main class="rozvijime__main">
@@ -82,6 +80,45 @@
       </section>
 
       <section id="vice" class="foto_reference">
+          <header>
+            <h2 class="foto_reference__title">
+              Ukázky z minulých boxů
+            </h2>
+          </header>
+          <div class="foto_reference__cards">
+            <a href="img/cards/podzim_big.JPG" class="card-lightbox">
+              <img src="img/cards/podzim.png" class="rozvijime__cards__picture" alt="ukázka boxů bobobox">
+            </a>
+            <a href="img/cards/zahrada_big.jpg" class="card-lightbox">
+              <img src="img/cards/zahradka.png" class="rozvijime__cards__picture" alt="ukázka boxů bobobox">
+            </a>
+            <a href="img/cards/more-big.jpg" class="card-lightbox">
+              <img src="img/cards/more.png" class="rozvijime__cards__picture" alt="ukázka boxů bobobox">
+            </a>
+            <a href="img/cards/Zoo_big.jpg" class="card-lightbox">
+              <img src="img/cards/Zoo.png" class="rozvijime__cards__picture" alt="ukázka boxů bobobox">
+            </a>
+            <a href="img/cards/pirati_big.jpg" class="card-lightbox">
+              <img src="img/cards/Pirati.png" class="rozvijime__cards__picture" alt="ukázka boxů bobobox">
+            </a>
+            <a href="img/cards/broucci_big.jpg" class="card-lightbox">
+              <img src="img/cards/Broucci.png" class="rozvijime__cards__picture" alt="ukázka boxů bobobox">
+            </a>
+            <div class="fotogalerie_video">
+              <a href="https://www.facebook.com/pg/bobobox.cz/photos/?ref=page_internal" target="_blank" class="button-fotogalerie overlay">
+                <span class="button-objednat__title button">Fotogalerie</span>
+              </a>
+
+              <a href="https://www.youtube.com/channel/UCx8w7e3uWnzM_JIlAB-Fwlg" target="_blank" class="button-video overlay">
+                <span class="button-objednat__title button">Video ukázky</span>
+              </a>
+            </div>
+          </div>
+          <div class="foto_reference__show-more">
+            <span class="foto_reference__show-more__text">
+              Zobraz další
+            </span>
+          </div>
           <aside>
            <figure>
              <img src="img/split/foto.png" alt="Reference">
@@ -332,7 +369,7 @@
         <div class="objednavka__col2">
           <ul class="objednavka__tabs">
             <li class="tab-1 active" id="tab_1"><a href="#" class="overlay">Předplatné</a></li>
-            <li class="tab-2" id="tab_2"><a href="#" class="overlay">Jako Dárek</a></li>
+            <li class="tab-2" id="tab_2"><a href="#" class="overlay">Na zkoušku</a></li>
           </ul>
 
           <div class="clear"></div>
@@ -360,12 +397,12 @@
               <input type="radio" class="prepocet" id="10boxu" name="boxy" /><label for="10boxu"><span></span>10 Boxů + <strong class="box zdarma">2 Zdarma</strong> <strong class="box darek">+ Dárek</strong></label>
             </div>
 
-            <div class="objednavka__card__novy">Nový Bobobox vycházi vždy 1 týden v měsíci</div>
+            <div class="objednavka__card__novy">Nový Bobobox vychází vždy první týden v měsíci</div>
 
             <div class="hr">&nbsp;</div>
 
             <input type="checkbox" id="tab_1-material" name="tab_1-material" class="prepocet" />
-            <label for="tab_1-material" class="objednavka__card__material prepocet"><span></span>Přiobjednat 2x Materiál pro sourozence + 129 Kč / Box</label>
+            <label for="tab_1-material" class="objednavka__card__material prepocet"><span></span>Přiobjednat Extra materiál pro sourozence + 129 Kč / Box</label>
 
             <div class="hr">&nbsp;</div>
 
@@ -389,15 +426,15 @@
           </div>
 
           <div class="tab_2">
-            <img src="img/pricing/hat-1.png" class="hat1" alt="">
-            <img src="img/pricing/hat-2.png" class="hat2" alt="">
+            <!--<img src="img/pricing/hat-1.png" class="hat1" alt="">
+            <img src="img/pricing/hat-2.png" class="hat2" alt="">-->
             <div class="objednavka__card__price">429 Kč</div>
             <div class="hr">&nbsp;</div>
 
             <div class="objednavka__card__benefits__item"><span class="objednavka__predplatne__ic_zabava">&nbsp;</span> Zábava pro budoucí tvůrce a kreativce</div>
             <div class="objednavka__card__benefits__item"><span class="objednavka__predplatne__ic_miluji">&nbsp;</span> Tvoření s Boboboxem děti milují</div>
-            <div class="objednavka__card__benefits__item"><span class="objednavka__predplatne__ic_gratulation">&nbsp;</span> Budete nejoblíbenějším gratulantem</div>
-            <div class="objednavka__card__benefits__item"><span class="objednavka__predplatne__ic_nemusite">&nbsp;</span> Originální přáníčko v ceně</div>
+            <!--<div class="objednavka__card__benefits__item"><span class="objednavka__predplatne__ic_gratulation">&nbsp;</span> Budete nejoblíbenějším gratulantem</div>
+            <div class="objednavka__card__benefits__item"><span class="objednavka__predplatne__ic_nemusite">&nbsp;</span> Originální přáníčko v ceně</div>-->
 
             <div class="hr">&nbsp;</div>
 
@@ -407,7 +444,7 @@
             <div class="hr">&nbsp;</div>
 
             <div class="objednavka__card__summary__1"><span id="card_1_sum">429</span> Kč</div>
-            <div class="objednavka__card__summary__2">Dárkový Bobobox</div>
+            <div class="objednavka__card__summary__2">Bobobox na zkoušku</div>
             <a href="https://bobobox.typeform.com/to/jzBFim" data-mode="1" class="button-objednat overlay">
               <img class="button-objednat__kosik" src="img/header/cart_icon.png" alt="Objednat - košík">
               <span class="button-objednat__title button">Objednat</span>
@@ -420,23 +457,13 @@
             <div class="objednavka__card__obsah__item"><span class="objednavka__predplatne__ic_material">&nbsp;</span> Veškerý materiál</div>
 
 
-            <img src="img/pricing/happybirthday.png"><span class="objednavka__card__prani">+ Přání k narozeninám</span>
+            <!--<img src="img/pricing/happybirthday.png"><span class="objednavka__card__prani">+ Přání k narozeninám</span>-->
           </div>
 
         </div>
         </div>
 
         <div class="clear"></div>
-
-        <div class="fotogalerie_video">
-        <a href="https://www.facebook.com/pg/bobobox.cz/photos/?ref=page_internal" class="button-fotogalerie overlay">
-          <span class="button-objednat__title button">Fotogalerie</span>
-        </a>
-
-        <a href="https://www.youtube.com/channel/UCx8w7e3uWnzM_JIlAB-Fwlg" class="button-video overlay">
-          <span class="button-objednat__title button">Video ukázky</span>
-        </a>
-        </div>
 
 
         <div class="objednavka__recomend">
@@ -654,6 +681,7 @@
     </footer>
 
     <script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script src="node_modules/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
     <script src="js/youtube_popup.jquery.js"></script>
     <script src="js/aos.min.js"></script>
     <script src="js/rellax.min.js"></script>

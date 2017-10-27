@@ -311,9 +311,10 @@ section {
     position: relative;
     color: white;
     min-height: 570px;
-    height: calc(100vh - 160px - 5em);
+    height: calc(100vh - 4em);
     width: 100%;
     overflow: hidden;
+    padding-top: 4em;
 }
 
 .rozvijime__main {
@@ -404,15 +405,18 @@ section {
 
     display: flex;
     width: 100%;
+	max-height: 45%;
     justify-content: space-around;
     align-items: center;
 }
 
-@media (max-height: 860px) {
-    .rozvijime__header__title {
-        padding-top: 0px !important;
-    }
+@media screen and (max-width: 1100px) {
+	.rozvijime__header {
+		max-height: none;
+	}
+}
 
+@media (max-height: 860px) {
     .rozvijime__play-video {
         margin-bottom: 1.5em !important;
     }
@@ -433,7 +437,7 @@ section {
         height: 150px;
     }
     .rozvijime {
-        height: calc(100vh - 185px);
+        height: calc(100vh - 3em);
     }
 }
 
@@ -443,6 +447,15 @@ section {
     transform: scale(0.6);
 }
 
+.rozvijime__header__image .rozvijime__header__image--cloud {
+	display: block;
+	margin-bottom: 150px;
+}
+
+.rozvijime__header__image:first-of-type .rozvijime__header__image--cloud {
+	margin-left: -50px;
+}
+
 @media (max-width: 1400px) {
     .rozvijime__header__image--rocket {
         margin-left: -20px;
@@ -450,13 +463,20 @@ section {
 }
 
 @media (max-width: 1350px) {
-    .rozvijime__header__image {
-        display: none;
+    .rozvijime__header__image .rozvijime__header__image--baloon,
+	.rozvijime__header__image .rozvijime__header__image--rocket {
+		display: none;
     }
 
     .rozvijime__header {
         height: auto;
     }
+}
+
+@media screen and (max-width: 1100px) {
+	.rozvijime__header__image {
+		display: none;
+	}
 }
 
 .rozvijime__header__title {
@@ -465,7 +485,18 @@ section {
     justify-content: center;
     align-items: center;
     padding: 0 2em;
-    padding-top: 20px;
+}
+
+@media screen and (max-width: 1350px) {
+	.rozvijime__header__title {
+		padding-top: 5em;
+	}
+}
+
+@media screen and (max-width: 860px) {
+	.rozvijime__header__title {
+		padding-top: 2em;
+	}
 }
 
 .rozvijime__header__subtitle {
@@ -476,14 +507,14 @@ section {
     font-size: 23pt;
 }
 
-@media (min-width: 1100px) {
-    .rozvijime__header__title__break {
-        display: none;
-    }
+@media screen and (max-width: 1400px) {
+	.rozvijime__header__subtitle__break {
+		display: none;
+	}
 }
 
-@media (min-width: 800px) {
-    .rozvijime__header__subtitle__break {
+@media screen and (max-width: 1350px) {
+    .rozvijime__header__title__break {
         display: none;
     }
 }
@@ -494,15 +525,27 @@ section {
     }
 }
 
+@media screen and (max-width: 650px) {
+	.rozvijime__header__subtitle {
+		font-size: 20pt;
+	}
+}
+
 .rozvijime__header__title__text {
     font-size: 30pt;
-    line-height: 36pt;
+    line-height: 42pt;
     text-align: center;
     padding-bottom: 20px;
 }
 
 .rozvijime__header__title__text {
     font-size: 38pt;
+}
+
+@media screen and (max-width: 650px) {
+	.rozvijime__header__title__text {
+		font-size: 34pt;
+	}
 }
 
 .button-objednat {
@@ -976,12 +1019,12 @@ section {
 }
 
 .foto_reference{
-    background: #60b34c;
+    background: #fff;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 5em;
+    padding: 3em 0 5em;
 }
 
 @media (max-width: 900px) {
@@ -990,16 +1033,73 @@ section {
     }
 }
 
+.foto_reference .foto_reference__title {
+	font-size: 42pt;
+	text-align: center;
+	color: #3ba8d4;
+	margin: 0 0 0.5em 0;
+    line-height: 42pt;
+}
+
+.foto_reference__cards {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+    flex-wrap: wrap;
+	max-width: 1200px;
+    overflow: hidden;
+    max-height: 298px;
+    transition: max-height 1s;
+    padding: 8px 5px 0;
+}
+
+.foto_reference__cards--extended {
+    max-height: 1500px !important;
+}
+
+.foto_reference__show-more {
+    text-align: center;
+    padding: 30px 0 50px;
+}
+
+.foto_reference__show-more__text {
+    color: #3ba8d4;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 18pt;
+    font-family: 'Ubuntu', sans-serif;
+}
+
 .objednavka__reference{
     margin: 5em auto;
     display: block;
     width: 90%;
 }
 
-.foto_reference img{
-    width: 90%;
-    margin: auto;
-    display: block;
+.foto_reference img:not(.rozvijime__cards__picture) {
+	width: 90%;
+	margin: auto;
+	display: block;
+}
+
+.foto_reference__cards a:not(.button-fotogalerie):not(.button-video) {
+	width: 33.33%;
+    margin-bottom: 20px;
+}
+
+.foto_reference__cards .fotogalerie_video {
+    margin-top: 0;
+}
+
+@media screen and (max-width: 840px) {
+    .foto_reference__cards a:not(.button-fotogalerie):not(.button-video) {
+        width: 50%;
+    }
+}
+
+.foto_reference a img {
+	max-width: 100%;
 }
 
 
@@ -1411,6 +1511,10 @@ h4.objednavka__subtitle {
     padding: 20px 30px 40px 30px;
 }
 
+.tab_2 {
+    padding-bottom: 120px;
+}
+
 
 .objednavka__tabs .overlay {
     transition: none;
@@ -1452,7 +1556,7 @@ h4.objednavka__subtitle {
 .objednavka__card__novy{
     font-weight: 700;
     color: #f77206;
-    font-size: 16pt;
+    font-size: 15pt;
     letter-spacing: -0.5pt;
     margin-top: 10px;
 }
@@ -1553,7 +1657,7 @@ h4.objednavka__subtitle {
 }
 
 .objednavka__tabs li a{
-    padding: 16px 20px 8px 20px;
+    padding: 16px 15px 8px 15px;
     display: block;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -2290,4 +2394,12 @@ input[type="radio"]:checked + label > span {
     -webkit-background-size: 24px 24px;
     -moz-background-size: 24px 24px;
     -o-background-size: 24px 24px;
+}
+
+/* lightbox plugin MagnificPopup editation */
+.mfp-bg {
+    z-index: 5001;
+}
+.mfp-wrap {
+    z-index: 5002;
 }
