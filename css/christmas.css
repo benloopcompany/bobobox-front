@@ -1,0 +1,239 @@
+/*--------------------------------------------------------------
+    GENERAL
+ --------------------------------------------------------------*/
+body, html {
+	font-family: 'Rubik', sans-serif;
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+.wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+/* clearfix */
+.group:before,
+.group:after {
+	content: " ";
+	display: table;
+}
+.group:after {
+	clear: both;
+}
+
+/*---------------------------------------------------------------------
+	HEADER
+ ---------------------------------------------------------------------*/
+header {
+	background-color: rgb(176,48,48);
+	text-align: center;
+	color: #fff;
+}
+
+header h1 {
+	font-size: 42pt;
+	line-height: 120%;
+	padding: 60px 0;
+}
+
+@media screen and (max-width: 850px) {
+	header h1 {
+		font-size: 32pt;
+	}
+}
+
+/*---------------------------------------------------------------------------
+	MAIN CONTENT
+ ---------------------------------------------------------------------------*/
+.main_content {
+	background: url(../img/split/wood-texture.jpg) top center repeat-y;
+	background-size: 100% 2800px;
+	text-align: center;
+	overflow: hidden;
+}
+
+.christmas_offer {
+	padding-top: 40px;
+}
+
+.christmas_offer h2 {
+	font-size: 42pt;
+	color: rgb(0,0,0);
+	margin-bottom: 0.3em;
+}
+
+@media screen and (max-width: 850px) {
+	.christmas_offer h2 {
+		font-size: 32pt;
+	}
+}
+
+.christmas_offer__list {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+@media screen and (max-width: 840px) {
+	.christmas_offer__list {
+		flex-wrap: wrap;
+	}
+}
+
+.christmas_offer__list__item {
+	max-width: 33.33%;
+}
+
+@media screen and (max-width: 840px) {
+	.christmas_offer__list__item {
+		max-width: 50%;
+		width: 50%;
+	}
+}
+
+.christmas_offer__list__item p {
+	font-size: 42pt;
+	margin-top: 0.2em;
+	font-family: 'Baloo Paaji', cursive;
+	max-width: 100%;
+}
+
+@media screen and (max-width: 1100px) {
+	.christmas_offer__list__item p {
+		font-size: 25pt;
+	}
+}
+
+.christmas_offer__list__item img {
+	max-width: 100%;
+}
+
+.christmas_offer__list__item:first-of-type p {
+	color: rgb(52,168,209);
+}
+
+.christmas_offer__list__item:nth-of-type(2) {
+	color: rgb(242,106,103);
+}
+
+.christmas_offer__list__item:nth-of-type(3) {
+	color: rgb(0,171,75);
+}
+
+/*----------------------------------------------------------------------
+	ORDER
+ ----------------------------------------------------------------------*/
+.objednavka__onlycol {
+	width: 500px;
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.objednavka__tabs {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.objednavka__tabs li {
+	font-family: 'Baloo Paaji', cursive;
+	font-size: 16pt;
+	text-align: center;
+	float: none;
+	width: 100%;
+	 color: #fff;
+	background-color: rgb(0,161,57);
+	padding: 16px 15px 8px 15px;
+	display: block;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.tab_christmas {
+	font-family: 'Ubuntu';
+	font-size: 14pt;
+	background: #fff;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	position: relative;
+	padding: 20px 30px 125px 30px;
+	text-align: center;
+}
+
+.objednavka__card__info__item--choice {
+	font-size: 24px;
+	color: rgb(52,168,209);
+	margin: 1em 0;
+	font-weight: bold;
+}
+
+.objednavka__card__info__item--when {
+	font-size: 24px;
+	color: rgb(242,106,103);
+	margin: 1em 0;
+	font-weight: bold;
+}
+
+.objednavka__card__material {
+	float: left;
+	margin-left: 0.5em;
+}
+
+.objednavka__card__summary__1 {
+	font-size: 38pt;
+}
+
+.objednavka__card__summary__2 {
+	margin-bottom: 25px;
+}
+
+.button-objednat {
+	width: 350px;
+}
+
+.objednavka__card__obsah__headline {
+	margin: 1em 0 0;
+	font-size: 24px;
+	color: rgb(112,112,112);
+}
+
+.objednavka__card__predplatne__darek a {
+	color: rgb(82,168,209);
+	display: inline-block;
+	border-bottom: 2px solid rgb(52,168,209);
+	line-height: 120%;
+	font-size: 32px;
+	margin: 1.25em 0 0.25em;
+	font-family: 'Baloo Paaji', cursive;
+}
+
+.christmas_order .tab_christmas {
+	padding-bottom: 50px;
+	position: relative;
+	z-index: 10;
+}
+
+.christmas_order {
+	padding-bottom: 200px;
+	position: relative;
+}
+
+.christmas_order__tree:first-of-type {
+	position: absolute;
+	top: 45%;
+	left: calc(50% - 250px - 48px); /* minus half of objednavka__onlycol and half a picture*/
+	transform: scale(2);
+}
+
+.christmas_order__tree:nth-of-type(2) {
+	position: absolute;
+	top: 45%;
+	right: calc(50% - 250px - 70px);
+	transform: scale(2);
+}
