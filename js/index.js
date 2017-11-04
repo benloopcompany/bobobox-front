@@ -40,7 +40,7 @@ jQuery(function () {
 	var lastId,
 			topMenu = $(".page-nav ul"),
 			topMenuHeight = topMenu.outerHeight() + 200,
-			menuItems = topMenu.find("a"),
+			menuItems = topMenu.find("a.scrollable"),
 			scrollItems = menuItems.map(function () {
 				var item = $($(this).attr("href"));
 				if (item.length) {
@@ -243,5 +243,13 @@ if (typeof zenscroll != 'undefined') {
 		}
 
 	});
+
+	// lightbox for christmas minisite
+	$('.christmas-lightbox').magnificPopup({
+		gallery: {
+			enabled: true
+		},
+		type: 'image'
+	})
 
 })(jQuery);
