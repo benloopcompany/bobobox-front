@@ -96,6 +96,26 @@ header h1 {
 	}
 }
 
+.christmas_offer__list__item a {
+	display: block;
+	position: relative;
+}
+
+.christmas_offer__list__item a .fontastic-android-add-circle {
+	position: absolute;
+	top: calc(50% - 40px);
+	left: calc(50% - 40px);
+	z-index: 10;
+	font-size: 80px;
+	color: #3ba8d4;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.christmas_offer__list__item a:hover .fontastic-android-add-circle {
+	opacity: 1;
+}
+
 .christmas_offer__list__item p {
 	font-size: 42pt;
 	margin-top: 0.2em;

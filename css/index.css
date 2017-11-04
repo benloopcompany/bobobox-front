@@ -207,6 +207,16 @@ section {
 	background-image: none;
 }
 
+.page-nav li.christmas-list {
+	display: none;
+}
+
+@media screen and (max-width: 1200px) {
+	.page-nav li.christmas-list {
+		display: block;
+	}
+}
+
 #mobile-menu-btn {
 	width: 30px;
 	padding: 6px 0px;
@@ -1144,6 +1154,22 @@ section {
 .foto_reference__cards a:not(.button-fotogalerie):not(.button-video) {
 	width: 33.33%;
 	margin-bottom: 20px;
+	position: relative;
+}
+
+.foto_reference__cards a:not(.button-fotogalerie):not(.button-video) .fontastic-android-add-circle {
+	position: absolute;
+	top: calc(50% - 40px);
+	left: calc(50% - 40px);
+	z-index: 10;
+	font-size: 80px;
+	color: #3ba8d4;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.foto_reference__cards a:not(.button-fotogalerie):not(.button-video):hover .fontastic-android-add-circle {
+	opacity: 1;
 }
 
 .foto_reference__cards .fotogalerie_video {
