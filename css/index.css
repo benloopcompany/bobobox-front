@@ -1031,7 +1031,16 @@ section {
 }
 
 .christmas {
-	background-color: rgb(167, 42, 42);
+	background-color: #a82a2b;
+  height: 400px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.christmas img {
+  height: 200px;
 }
 
 .christmas > .wrapper {
