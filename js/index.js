@@ -75,28 +75,25 @@ jQuery(function () {
 		var tt = jQuery(this).parent().attr("id");
 		/*jQuery("#objednavka__tab_img").prop("src","img/pricing/box_"+tt+".png");*/
 		jQuery("." + tt).show();
+    prepocet();
 		return false;
-
 	});
 
 
 	var url = {
-		"1": "https://bobobox.typeform.com/to/jzBFim",
-		"1_1": "https://bobobox.typeform.com/to/jzBFim?siblings=Sourozenecky",
-		"3": "https://bobobox.typeform.com/to/nc8dsZ",
-		"3_1": "https://bobobox.typeform.com/to/nc8dsZ?siblings=Sourozenecky",
-		"5": "https://bobobox.typeform.com/to/tZfzxY",
-		"5_1": "https://bobobox.typeform.com/to/tZfzxY?siblings=Sourozenecky",
-		"10": "https://bobobox.typeform.com/to/zLxb9D",
-		"10_1": "https://bobobox.typeform.com/to/zLxb9D?siblings=Sourozenecky",
+		"1": "https://shop.bobobox.cz/collections/frontpage/products/bobobox-1-box?variant=9218342649899",
+		"1_1": "https://shop.bobobox.cz/collections/frontpage/products/bobobox-1-box?variant=9218247589931",
+		"3": "https://shop.bobobox.cz/collections/frontpage/products/predplatne-na-3-mesice?variant=9219646062635",
+		"3_1": "https://shop.bobobox.cz/collections/frontpage/products/predplatne-na-3-mesice?variant=9670812106795",
+		"5": "https://shop.bobobox.cz/collections/frontpage/products/copy-of-predplatne-na-3-boxy?variant=9747821756459",
+		"5_1": "https://shop.bobobox.cz/collections/frontpage/products/copy-of-predplatne-na-3-boxy?variant=9747821789227",
+		"10": "https://shop.bobobox.cz/collections/frontpage/products/predplatne-na-10-boxu-2-zdarma-darecek?variant=9749215084587",
+		"10_1": "https://shop.bobobox.cz/collections/frontpage/products/predplatne-na-10-boxu-2-zdarma-darecek?variant=9749215117355",
 		"christmas": "https://bobobox.typeform.com/to/US4zat",
 		"christmas_1": "https://bobobox.typeform.com/to/US4zat?siblings=Sourozenecky"
 	};
 
-
-	// prepocitavani cen, nastaveni nákupního url
-	jQuery(".prepocet").click(function (e) {
-
+  function prepocet() {
 		var aktivnitab = jQuery(".objednavka__tabs li.active").attr("id");
 
 		if (aktivnitab == 'tab_1') {
@@ -162,12 +159,17 @@ jQuery(function () {
 
 			jQuery(".tab_christmas .button-objednat").prop("href", url[finurl]);
 		}
+  }
+
+
+	// prepocitavani cen, nastaveni nákupního url
+	jQuery(".prepocet").click(function (e) {
+    prepocet();
 	});
 
 	/* typeform přepracování */
 	jQuery(".button-objednat").add('.button-blue').click(function (e) {
-		$("body").append('<div id="typeform"><div class="content"><a href="javascript: return false;" class="close" onclick="jQuery(\'#typeform\').remove();"></a><iframe src=""></iframe></div></div>');
-		jQuery("#typeform iframe").prop("src", jQuery(this).prop("href"));
+    window.open(jQuery(this).prop("href"), '_eshop');
 		e.preventDefault();
 	});
 });
