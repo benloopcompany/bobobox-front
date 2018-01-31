@@ -176,7 +176,7 @@ section {
 	text-align: center;
 	min-width: 600px;
 	padding: 0.8em 0 1em 0;
-	height: 1.8em;
+	height: 2.4em;
 }
 
 .page-nav ul {
@@ -189,10 +189,35 @@ section {
 }
 
 .page-nav li a {
-	padding: 0.2em 1.5em 0.2em 3em;
+	padding: 0.2em 1em 0.2em 3em;
 	display: inline-block;
 	background: url('../img/header/menu_arrow.png') left center no-repeat;
 	font-size: 13pt;
+}
+
+.page-nav li a.eshop {
+	background: none;
+}
+
+.page-nav li a.eshop div {
+  position: relative;
+	background-color: rgb(247, 114, 6);
+	display: block;
+	border-radius: 10px;
+	transition: all 250ms ease;
+  padding: .4em 1em .5em 1.2em;
+	z-index: 200;
+}
+
+.page-nav li a.eshop span {
+  padding-right: 1.5em;
+}
+
+.page-nav li a.eshop img {
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  width: 15px;
 }
 
 .page-nav li.active a {
